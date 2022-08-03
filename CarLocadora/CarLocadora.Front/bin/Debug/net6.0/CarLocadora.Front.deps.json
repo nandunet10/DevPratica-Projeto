@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "CarLocadora.Front/1.0.0": {
+        "dependencies": {
+          "CarLocadora.Modelo": "1.0.0"
+        },
+        "runtime": {
+          "CarLocadora.Front.dll": {}
+        }
+      },
+      "CarLocadora.Modelo/1.0.0": {
+        "runtime": {
+          "CarLocadora.Modelo.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CarLocadora.Front/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CarLocadora.Modelo/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
