@@ -4,6 +4,7 @@ using CarLocadora.Infra.Entity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CarLocadora.Infra.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20220804025027_AlterandoNomeDasModels")]
+    partial class AlterandoNomeDasModels
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -55,7 +57,6 @@ namespace CarLocadora.Infra.Migrations
             modelBuilder.Entity("CarLocadora.Modelo.Modelos.ClienteModel", b =>
                 {
                     b.Property<string>("CPF")
-                        .ValueGeneratedOnAdd()
                         .HasMaxLength(14)
                         .HasColumnType("nvarchar(14)");
 
@@ -121,11 +122,11 @@ namespace CarLocadora.Infra.Migrations
 
             modelBuilder.Entity("CarLocadora.Modelo.Modelos.FormasDePagamentoModel", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("Placa")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Placa"), 1L, 1);
 
                     b.Property<bool>("Ativo")
                         .HasColumnType("bit");
@@ -141,7 +142,7 @@ namespace CarLocadora.Infra.Migrations
                         .HasMaxLength(150)
                         .HasColumnType("nvarchar(150)");
 
-                    b.HasKey("Id");
+                    b.HasKey("Placa");
 
                     b.ToTable("FormasDePagamento");
                 });
@@ -149,7 +150,6 @@ namespace CarLocadora.Infra.Migrations
             modelBuilder.Entity("CarLocadora.Modelo.Modelos.UsuarioModel", b =>
                 {
                     b.Property<string>("CPF")
-                        .ValueGeneratedOnAdd()
                         .HasMaxLength(14)
                         .HasColumnType("nvarchar(14)");
 
@@ -216,7 +216,6 @@ namespace CarLocadora.Infra.Migrations
             modelBuilder.Entity("CarLocadora.Modelo.Modelos.VeiculoModel", b =>
                 {
                     b.Property<string>("Placa")
-                        .ValueGeneratedOnAdd()
                         .HasMaxLength(8)
                         .HasColumnType("nvarchar(8)");
 
