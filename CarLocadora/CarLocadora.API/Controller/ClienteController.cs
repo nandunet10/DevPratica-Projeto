@@ -9,9 +9,9 @@ namespace CarLocadora.API.Controller
     public class ClienteController : ControllerBase
     {
         private readonly IClienteNegocio _clienteNegocio;
-        public ClienteController(IClienteNegocio cliente)
+        public ClienteController(IClienteNegocio clienteNegocio)
         {
-            _clienteNegocio = cliente;
+            _clienteNegocio = clienteNegocio;
         }
 
         [HttpGet()]
@@ -20,15 +20,15 @@ namespace CarLocadora.API.Controller
             return _clienteNegocio.ObterLista();
         }
         [HttpPost()]
-        public void Post([FromBody] ClienteModel cliente)
+        public void Post([FromBody] ClienteModel clienteModel)
         {
-            _clienteNegocio.Inserir(cliente);
+            _clienteNegocio.Inserir(clienteModel);
         }
 
         [HttpPut()]
-        public void Put([FromBody] ClienteModel cliente)
+        public void Put([FromBody] ClienteModel clienteModel)
         {
-            _clienteNegocio.Alterar(cliente);
+            _clienteNegocio.Alterar(clienteModel);
         }
     }
 }

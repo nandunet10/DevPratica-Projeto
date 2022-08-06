@@ -21,15 +21,15 @@ namespace CarLocadora.API.Controller
             return _categoriaNegocio.ObterLista();
         }
         [HttpPost()]
-        public void Post([FromBody] CategoriaModel categoria)
+        public void Post([FromBody] CategoriaModel categoriaModel)
         {
-            _categoriaNegocio.Inserir(categoria);
+            _categoriaNegocio.Inserir(categoriaModel);
         }
 
         [HttpPut()]
-        public void Put([FromBody] CategoriaModel categoria)
+        public void Put([FromBody] CategoriaModel categoriaModel)
         {
-            _categoriaNegocio.Alterar(categoria);
+            _categoriaNegocio.Alterar(categoriaModel);
         }
         [HttpDelete()]
         public void Delete([FromQuery] int id)
