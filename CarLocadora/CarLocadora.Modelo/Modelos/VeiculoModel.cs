@@ -1,10 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CarLocadora.Modelo.Modelos
 {
-    public class Veiculos
+    public class VeiculoModel
     {
-        [Key][Required][StringLength(8)] public string Placa { get; set; }
+        [Key][Required][StringLength(8)][DatabaseGenerated(DatabaseGeneratedOption.Identity)] public string Placa { get; set; }
         [StringLength(100)] public string? Chassi { get; set; }
         [Required][StringLength(100)] public string Marca { get; set; }
         [Required][StringLength(150)] public string Modelo { get; set; }

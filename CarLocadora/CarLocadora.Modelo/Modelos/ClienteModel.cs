@@ -1,10 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CarLocadora.Modelo.Modelos
 {
-    public class Clientes : Endereco
+    public class ClienteModel : EnderecoModel
     {
-        [Key][Required][StringLength(14)] public string CPF { get; set; }
+        [Key][Required][StringLength(14)][DatabaseGenerated(DatabaseGeneratedOption.Identity)] public string CPF { get; set; }
         [Required][StringLength(12)] public string CNH { get; set; }
         [Required][StringLength(150)] public string Nome { get; set; }
         [Required] public DateTime DataNascimento { get; set; }

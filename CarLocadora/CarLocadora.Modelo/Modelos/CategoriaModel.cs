@@ -1,10 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CarLocadora.Modelo.Modelos
 {
-    public class Categorias
+    public class CategoriaModel
     {
-        [Key][Required] public int Id { get; set; }
+        [Key][Required][DatabaseGenerated(DatabaseGeneratedOption.Identity)] public int Id { get; set; }
         [Required][StringLength(100)] public string Descricao { get; set; }
         [Required] public decimal ValorDiaria { get; set; }
         [Required] public bool Ativo { get; set; }

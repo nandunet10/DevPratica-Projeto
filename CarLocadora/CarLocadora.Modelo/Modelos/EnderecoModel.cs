@@ -2,7 +2,7 @@
 
 namespace CarLocadora.Modelo.Modelos;
 
-public class Endereco
+public class EnderecoModel
 {
     [Required][StringLength(50)] public string Logradouro { get; set; } 
     [Required][StringLength(20)] public string Numero { get; set; } 
