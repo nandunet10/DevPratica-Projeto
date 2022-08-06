@@ -1,4 +1,9 @@
 ﻿using CarLocadora.Infra.Entity;
+using CarLocadora.Negocio.Categoria;
+using CarLocadora.Negocio.Cliente;
+using CarLocadora.Negocio.FormasDePagamento;
+using CarLocadora.Negocio.Usuario;
+using CarLocadora.Negocio.Veiculo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
@@ -21,7 +26,11 @@ namespace CarLocadora.API
             services.AddDbContext<Context>(options => options.UseSqlServer(connection));
 
             //Adicionar Scoped
-            //services.AddScoped<Interface, Servico>();
+            services.AddScoped<IClienteNegocio, ClienteNegocio>();
+            services.AddScoped<ICategoriaNegocio, CategoriaNegocio>();
+            services.AddScoped<IFormasDePagamentoNegocio, FormasDePagamentoNegocio>();
+            services.AddScoped<IUsuarioNegocio, UsuarioNegocio>();
+            services.AddScoped<IVeiculoNegocio, VeiculoNegocio>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
