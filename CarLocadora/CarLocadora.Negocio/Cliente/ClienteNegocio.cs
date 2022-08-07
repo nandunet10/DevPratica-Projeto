@@ -24,7 +24,7 @@ namespace CarLocadora.Negocio.Cliente
             _context.SaveChangesAsync();
         }
 
-        public ClienteModel Obter(string CPF) => _context.Clientes.SingleOrDefault(x => x.CPF.Equals(CPF));
+        public ClienteModel Obter(string cpf) => _context.Clientes.SingleOrDefault(x => x.CPF.Equals(cpf));
 
         public List<ClienteModel> ObterLista() => _context.Clientes.ToList();
     }

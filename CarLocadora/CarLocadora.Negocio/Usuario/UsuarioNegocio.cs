@@ -26,6 +26,11 @@ namespace CarLocadora.Negocio.Usuario
             _context.SaveChangesAsync();
         }
 
+        public UsuarioModel Obter(string cpf)
+        {
+            return _context.Usuarios.SingleOrDefault(x => x.CPF.Equals(cpf));
+        }
+
         public List<UsuarioModel> ObterLista() => _context.Usuarios.ToList();
   
     }

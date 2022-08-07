@@ -1,5 +1,4 @@
-﻿@model IEnumerable<CarLocadora.Modelo.Modelos.ClienteModel
->
+﻿@model IEnumerable<CarLocadora.Modelo.Modelos.ClienteModel>
 
 @{
     ViewData["Title"] = "Index";
@@ -68,9 +67,9 @@
                 </td>
                 <td>
                     @Html.ActionLink("Editar", "Edit", new {  CPF=item.CPF  }) @*|
-                    @Html.ActionLink("Detalhes", "Details", new { CPF=item.CPF}) |
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                   data-bs-cpf="@item.CPF" data-bs-nome="@item.Nome">Excluir</a>*@
+                @Html.ActionLink("Detalhes", "Details", new { CPF=item.CPF}) |
+                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                data-bs-cpf="@item.CPF" data-bs-nome="@item.Nome">Excluir</a>*@
                 </td>
             </tr>
         }

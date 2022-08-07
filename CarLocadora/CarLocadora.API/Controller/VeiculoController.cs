@@ -20,6 +20,13 @@ namespace CarLocadora.API.Controller
         {
             return _veiculoNegocio.ObterLista();
         }
+
+        [HttpGet("ObterDados")]
+        public VeiculoModel Get([FromQuery] string placa)
+        {
+            return _veiculoNegocio.Obter(placa);
+        }
+
         [HttpPost()]
         public void Post([FromBody] VeiculoModel veiculoModel)
         {

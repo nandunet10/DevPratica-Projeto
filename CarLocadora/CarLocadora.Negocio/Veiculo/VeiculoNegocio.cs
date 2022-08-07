@@ -27,6 +27,9 @@ namespace CarLocadora.Negocio.Veiculo
             _context.SaveChangesAsync();
         }
 
+        public VeiculoModel Obter(string placa) => _context.Veiculos.SingleOrDefault(x => x.Placa.Equals(placa));
+    
+
         public List<VeiculoModel> ObterLista() => _context.Veiculos.ToList();
 
     }

@@ -8,17 +8,18 @@ using System.Net.Http.Headers;
 
 namespace CarLocadora.Front.Controllers
 {
-    public class CategoriaController : Controller
+    public class VeiculoController : Controller
     {
         private string? mensagem = string.Empty;
 
         private readonly IOptions<DadosBase> _dadosBase;
 
-        public CategoriaController(IOptions<DadosBase> dadosBase)
+        public VeiculoController(IOptions<DadosBase> dadosBase)
         {
             _dadosBase = dadosBase;
         }
-        // GET: CategoriaController
+
+        // GET: VeiculoController
         public ActionResult Index(string? mensagem = null, bool sucesso = true)
         {
             if (sucesso)
@@ -30,12 +31,12 @@ namespace CarLocadora.Front.Controllers
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            HttpResponseMessage response = client.GetAsync($"{_dadosBase.Value.API_URL_BASE}Categoria").Result;
+            HttpResponseMessage response = client.GetAsync($"{_dadosBase.Value.API_URL_BASE}Veiculo").Result;
 
             if (response.IsSuccessStatusCode)
             {
                 string conteudo = response.Content.ReadAsStringAsync().Result;
-                return View(JsonConvert.DeserializeObject<List<CategoriaModel>>(conteudo));
+                return View(JsonConvert.DeserializeObject<List<VeiculoModel>>(conteudo));
             }
             else
             {
@@ -43,22 +44,22 @@ namespace CarLocadora.Front.Controllers
             }
         }
 
-        // GET: CategoriaController/Details/5
+        // GET: VeiculoController/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: CategoriaController/Create
+        // GET: VeiculoController/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: CategoriaController/Create
+        // POST: VeiculoController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([FromForm] CategoriaModel model)
+        public ActionResult Create([FromForm] VeiculoModel model)
         {
             try
             {
@@ -69,7 +70,7 @@ namespace CarLocadora.Front.Controllers
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                    HttpResponseMessage response = client.PostAsJsonAsync($"{_dadosBase.Value.API_URL_BASE}Categoria", model).Result;
+                    HttpResponseMessage response = client.PostAsJsonAsync($"{_dadosBase.Value.API_URL_BASE}Veiculo", model).Result;
 
                     if (response.IsSuccessStatusCode)
                     {
@@ -95,19 +96,19 @@ namespace CarLocadora.Front.Controllers
             }
         }
 
-        // GET: CategoriaController/Edit/5
-        public ActionResult Edit(int id)
+        // GET: VeiculoController/Edit/5
+        public ActionResult Edit(string Placa)
         {
             HttpClient client = new();
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            HttpResponseMessage response = client.GetAsync($"{_dadosBase.Value.API_URL_BASE}Categoria/ObterDados?Id={id}").Result;
+            HttpResponseMessage response = client.GetAsync($"{_dadosBase.Value.API_URL_BASE}Veiculo/ObterDados?Id={Placa}").Result;
 
             if (response.IsSuccessStatusCode)
             {
                 string conteudo = response.Content.ReadAsStringAsync().Result;
-                return View(JsonConvert.DeserializeObject<CategoriaModel>(conteudo));
+                return View(JsonConvert.DeserializeObject<VeiculoModel>(conteudo));
             }
             else
             {
@@ -115,10 +116,10 @@ namespace CarLocadora.Front.Controllers
             }
         }
 
-        // POST: CategoriaController/Edit/5
+        // POST: VeiculoController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([FromForm] CategoriaModel model)
+        public ActionResult Edit([FromForm] VeiculoModel model)
         {
             try
             {
@@ -128,7 +129,7 @@ namespace CarLocadora.Front.Controllers
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                    HttpResponseMessage response = client.PutAsJsonAsync($"{_dadosBase.Value.API_URL_BASE}Categoria", model).Result;
+                    HttpResponseMessage response = client.PutAsJsonAsync($"{_dadosBase.Value.API_URL_BASE}Veiculo", model).Result;
 
                     if (response.IsSuccessStatusCode)
                         return RedirectToAction(nameof(Index), new { mensagem = "Registro editado!", sucesso = true });
@@ -150,32 +151,13 @@ namespace CarLocadora.Front.Controllers
             }
         }
 
-        // GET: CategoriaController/Delete/5
+        // GET: VeiculoController/Delete/5
         public ActionResult Delete(int id)
         {
-            try
-            {
-                HttpClient client = new();
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-                HttpResponseMessage response = client.DeleteAsync($"{_dadosBase.Value.API_URL_BASE}Categoria?Id={id}").Result;
-
-                if (response.IsSuccessStatusCode)                
-                    return RedirectToAction(nameof(Index), new { mensagem = "Registro deletado!", sucesso = true });                
-                else                
-                    throw new Exception("Deu Zica");                
-
-            }
-            catch (Exception ex)
-            {
-                TempData["erro"] = $"Não foi possivel excluir o fornecedor " + ex.Message;
-
-                return View();
-            }
+            return View();
         }
 
-        // POST: CategoriaController/Delete/5
+        // POST: VeiculoController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)

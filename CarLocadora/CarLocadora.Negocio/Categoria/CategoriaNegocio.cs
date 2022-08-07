@@ -33,6 +33,11 @@ namespace CarLocadora.Negocio.Categoria
             _context.SaveChangesAsync();
         }
 
+        public CategoriaModel Obter(int id)
+        {
+            return _context.Categorias.SingleOrDefault(x => x.Id.Equals(id));
+        }
+
         public List<CategoriaModel> ObterLista() => _context.Categorias.ToList();
 
     }

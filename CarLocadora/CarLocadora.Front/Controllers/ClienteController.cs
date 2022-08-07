@@ -51,18 +51,18 @@ namespace CarLocadora.Front.Controllers
         // POST: ClienteController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create([FromForm] ClienteModel clienteModel)
+        public IActionResult Create([FromForm] ClienteModel model)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
 
-                    HttpClient cliente = new();
-                    cliente.DefaultRequestHeaders.Accept.Clear();
-                    cliente.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                    HttpClient client = new();
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                    HttpResponseMessage response = cliente.PostAsJsonAsync($"{_dadosBase.Value.API_URL_BASE}Cliente", clienteModel).Result;
+                    HttpResponseMessage response = client.PostAsJsonAsync($"{_dadosBase.Value.API_URL_BASE}Cliente", model).Result;
 
                     if (response.IsSuccessStatusCode)
                     {
@@ -92,11 +92,11 @@ namespace CarLocadora.Front.Controllers
         // GET: ClienteController/Edit/5
         public ActionResult Edit(string CPF)
         {
-            HttpClient cliente = new();
-            cliente.DefaultRequestHeaders.Accept.Clear();
-            cliente.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            HttpClient client = new();
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            HttpResponseMessage response = cliente.GetAsync($"{_dadosBase.Value.API_URL_BASE}Cliente/ObterDadosCliente?CPF={CPF}").Result;
+            HttpResponseMessage response = client.GetAsync($"{_dadosBase.Value.API_URL_BASE}Cliente/ObterDados?CPF={CPF}").Result;
 
             if (response.IsSuccessStatusCode)
             {
@@ -113,17 +113,17 @@ namespace CarLocadora.Front.Controllers
         // POST: ClienteController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([FromForm] ClienteModel clienteModel)
+        public ActionResult Edit([FromForm] ClienteModel model)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    HttpClient cliente = new();
-                    cliente.DefaultRequestHeaders.Accept.Clear();
-                    cliente.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                    HttpClient client = new();
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                    HttpResponseMessage response = cliente.PutAsJsonAsync($"{_dadosBase.Value.API_URL_BASE}Cliente", clienteModel).Result;
+                    HttpResponseMessage response = client.PutAsJsonAsync($"{_dadosBase.Value.API_URL_BASE}Cliente", model).Result;
 
                     if (response.IsSuccessStatusCode)
                         return RedirectToAction(nameof(Index), new { mensagem = "Registro editado!", sucesso = true });

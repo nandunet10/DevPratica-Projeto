@@ -20,6 +20,11 @@ namespace CarLocadora.API.Controller
         {
             return _usuarioNegocio.ObterLista();
         }
+        [HttpGet("ObterDados")]
+        public UsuarioModel Get([FromQuery] string cpf)
+        {
+            return _usuarioNegocio.Obter(cpf);
+        }
         [HttpPost()]
         public void Post([FromBody] UsuarioModel usuarioModel)
         {

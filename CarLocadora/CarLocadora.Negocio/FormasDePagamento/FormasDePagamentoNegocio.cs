@@ -26,6 +26,11 @@ namespace CarLocadora.Negocio.FormasDePagamento
             _context.SaveChangesAsync();
         }
 
+        public FormasDePagamentoModel Obter(int id)
+        {
+            return _context.FormasDePagamento.SingleOrDefault(x => x.Id.Equals(id));
+        }
+
         public List<FormasDePagamentoModel> ObterLista() => _context.FormasDePagamento.ToList();
 
     }

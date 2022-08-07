@@ -7,5 +7,6 @@ namespace CarLocadora.Negocio.FormasDePagamento
         List<FormasDePagamentoModel> ObterLista();
         void Inserir(FormasDePagamentoModel model);
         void Alterar(FormasDePagamentoModel model);
+        FormasDePagamentoModel Obter(int id);
     }
 }

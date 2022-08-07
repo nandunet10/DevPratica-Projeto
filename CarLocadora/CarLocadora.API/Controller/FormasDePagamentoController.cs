@@ -19,6 +19,11 @@ namespace CarLocadora.API.Controller
         {
             return _formasDePagamentoNegocio.ObterLista();
         }
+        [HttpGet("ObterDados")]
+        public FormasDePagamentoModel Get([FromQuery] int id)
+        {
+            return _formasDePagamentoNegocio.Obter(id);
+        }
         [HttpPost()]
         public void Post([FromBody] FormasDePagamentoModel formasDePagamentoModel)
         {

@@ -7,5 +7,6 @@ namespace CarLocadora.Negocio.Usuario
         List<UsuarioModel> ObterLista();
         void Inserir(UsuarioModel model);
         void Alterar(UsuarioModel model);
+        UsuarioModel Obter(string cpf);
     }
 }

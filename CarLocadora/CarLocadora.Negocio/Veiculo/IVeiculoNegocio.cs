@@ -7,5 +7,6 @@ namespace CarLocadora.Negocio.Veiculo
         List<VeiculoModel> ObterLista();
         void Inserir(VeiculoModel model);
         void Alterar(VeiculoModel model);
+        VeiculoModel Obter(string placa);
     }
 }

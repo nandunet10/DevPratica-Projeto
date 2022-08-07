@@ -8,5 +8,6 @@ namespace CarLocadora.Negocio.Categoria
         void Inserir(CategoriaModel model);
         void Alterar(CategoriaModel model);
         void Excluir(int id);
+        CategoriaModel Obter(int id);
     }
 }

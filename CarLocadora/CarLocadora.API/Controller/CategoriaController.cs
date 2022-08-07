@@ -16,9 +16,14 @@ namespace CarLocadora.API.Controller
         }
 
         [HttpGet()]
-        public List<CategoriaModel> GetAll()
+        public List<CategoriaModel> Get()
         {
             return _categoriaNegocio.ObterLista();
+        }
+        [HttpGet("ObterDados")]
+        public CategoriaModel Get([FromQuery] int id)
+        {
+            return _categoriaNegocio.Obter(id);
         }
         [HttpPost()]
         public void Post([FromBody] CategoriaModel categoriaModel)
