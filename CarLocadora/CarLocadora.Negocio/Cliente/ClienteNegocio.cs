@@ -12,15 +12,20 @@ namespace CarLocadora.Negocio.Cliente
         }
         public void Alterar(ClienteModel model)
         {
+            model.DataAlteracao = DateTime.Now;
             _context.Update(model);
             _context.SaveChangesAsync();
         }
 
         public void Inserir(ClienteModel model)
         {
+            model.DataInclusao = DateTime.Now;
             _context.AddAsync(model);
             _context.SaveChangesAsync();
         }
+
+        public ClienteModel Obter(string CPF) => _context.Clientes.SingleOrDefault(x => x.CPF.Equals(CPF));
+
         public List<ClienteModel> ObterLista() => _context.Clientes.ToList();
     }
 }

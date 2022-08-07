@@ -14,12 +14,14 @@ namespace CarLocadora.Negocio.Usuario
 
         public void Alterar(UsuarioModel model)
         {
+            model.DataAlteracao = DateTime.Now;
             _context.Update(model);
             _context.SaveChangesAsync();
         }
 
         public void Inserir(UsuarioModel model)
         {
+            model.DataInclusao = DateTime.Now;
             _context.AddAsync(model);
             _context.SaveChangesAsync();
         }

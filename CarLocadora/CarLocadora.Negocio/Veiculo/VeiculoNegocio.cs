@@ -15,12 +15,14 @@ namespace CarLocadora.Negocio.Veiculo
 
         public void Alterar(VeiculoModel model)
         {
+            model.DataAlteracao = DateTime.Now;
             _context.Update(model);
             _context.SaveChangesAsync();
         }
 
         public void Inserir(VeiculoModel model)
         {
+            model.DataInclusao = DateTime.Now;
             _context.AddAsync(model);
             _context.SaveChangesAsync();
         }

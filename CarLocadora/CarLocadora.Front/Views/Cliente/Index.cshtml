@@ -1,0 +1,122 @@
+﻿@model IEnumerable<CarLocadora.Modelo.Modelos.ClienteModel
+>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<p>
+    <a asp-action="Create">Criar novo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CPF)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CNH)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Celular)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataInclusao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataAlteracao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ativo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CPF)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CNH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Celular)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataInclusao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataAlteracao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ativo)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new {  CPF=item.CPF  }) @*|
+                    @Html.ActionLink("Detalhes", "Details", new { CPF=item.CPF}) |
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                   data-bs-cpf="@item.CPF" data-bs-nome="@item.Nome">Excluir</a>*@
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@*<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Excluir cliente</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="divModalTexto" class="mb-3">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                @Html.ActionLink("Excluir","Delete", null, htmlAttributes: new {@class = "btn btn-primary"})
+
+            </div>
+        </div>
+    </div>
+</div>*@
+
+
+@*@section scripts {
+    <script type="text/javascript">
+
+        var exampleModal = document.getElementById('exampleModal')
+        exampleModal.addEventListener('show.bs.modal', function(event) {
+
+            var button = event.relatedTarget
+
+            var cpf = button.getAttribute('data-bs-cpf')
+            var nome = button.getAttribute('data-bs-nome')
+
+            var modalBodyDiv = exampleModal.querySelector('.modal-body div')
+
+            modalBodyDiv.innerHTML = "Deseja confirmar a exclusão de <b>" + nome + "?</b>"
+                + "<br /> Não será possivél recuperar o registro após a exclusão do mesmo!"
+
+            var modalFooterDiv = exampleModal.querySelector('.modal-footer a')
+            modalFooterDiv.href = "/Cliente/Delete?CPF=" + cpf
+        })
+
+    </script>
+}*@

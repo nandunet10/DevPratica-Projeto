@@ -14,6 +14,7 @@ namespace CarLocadora.Negocio.Categoria
 
         public void Alterar(CategoriaModel model)
         {
+            model.DataAlteracao = DateTime.Now;
             _context.Update(model);
             _context.SaveChangesAsync();
         }
@@ -27,11 +28,12 @@ namespace CarLocadora.Negocio.Categoria
 
         public void Inserir(CategoriaModel model)
         {
+            model.DataInclusao = DateTime.Now;
             _context.AddAsync(model);
             _context.SaveChangesAsync();
         }
 
         public List<CategoriaModel> ObterLista() => _context.Categorias.ToList();
-     
+
     }
 }

@@ -14,12 +14,14 @@ namespace CarLocadora.Negocio.FormasDePagamento
 
         public void Alterar(FormasDePagamentoModel model)
         {
+            model.DataAlteracao = DateTime.Now;
             _context.Update(model);
             _context.SaveChangesAsync();
         }
 
         public void Inserir(FormasDePagamentoModel model)
         {
+            model.DataInclusao = DateTime.Now;
             _context.AddAsync(model);
             _context.SaveChangesAsync();
         }
