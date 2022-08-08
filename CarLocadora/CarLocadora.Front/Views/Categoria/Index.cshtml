@@ -5,7 +5,7 @@
 }
 
 <p>
-    <a asp-action="Create">Criar novo</a>
+    <a asp-action="Create">Novo</a>
 </p>
 <table class="table">
     <thead>
@@ -32,32 +32,77 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descricao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ValorDiaria)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ativo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataInclusao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataAlteracao)
-            </td>
-            <td>
-                @Html.ActionLink("Editar", "Edit", new {  id=item.Id }) @*|
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descricao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ValorDiaria)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ativo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataInclusao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataAlteracao)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new {  id=item.Id }) |
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                   data-bs-id="@item.Id" data-bs-nome="@item.Descricao">Excluir</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Excluir categoria</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="divModalTexto" class="mb-3">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                @Html.ActionLink("Excluir","Delete", null, htmlAttributes: new {@class = "btn btn-primary"})
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts {
+    <script type="text/javascript">
+
+        var exampleModal = document.getElementById('exampleModal')
+        exampleModal.addEventListener('show.bs.modal', function(event) {
+
+            var button = event.relatedTarget
+
+            var id = button.getAttribute('data-bs-id')
+            var descricao = button.getAttribute('data-bs-nome')
+
+            var modalBodyDiv = exampleModal.querySelector('.modal-body div')
+
+            modalBodyDiv.innerHTML = "Deseja confirmar a exclusão de <b>" + descricao + "?</b>"
+                    + "<br /> Não será possivél recuperar o registro após a exclusão do mesmo!"
+
+            var modalFooterDiv = exampleModal.querySelector('.modal-footer a')
+            modalFooterDiv.href = "/Categoria/Delete?id=" + id
+        })
+
+    </script>
+}

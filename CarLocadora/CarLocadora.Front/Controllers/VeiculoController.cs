@@ -97,13 +97,13 @@ namespace CarLocadora.Front.Controllers
         }
 
         // GET: VeiculoController/Edit/5
-        public ActionResult Edit(string Placa)
+        public ActionResult Edit(string placa)
         {
             HttpClient client = new();
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            HttpResponseMessage response = client.GetAsync($"{_dadosBase.Value.API_URL_BASE}Veiculo/ObterDados?Id={Placa}").Result;
+            HttpResponseMessage response = client.GetAsync($"{_dadosBase.Value.API_URL_BASE}Veiculo/ObterDados?Id={placa}").Result;
 
             if (response.IsSuccessStatusCode)
             {
