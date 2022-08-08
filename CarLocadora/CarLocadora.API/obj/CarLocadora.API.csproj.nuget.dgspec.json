@@ -34,9 +34,6 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\DevPratica\\DevPratica-Projeto\\CarLocadora\\CarLocadora.Modelo\\CarLocadora.Modelo.csproj": {
-                "projectPath": "D:\\DevPratica\\DevPratica-Projeto\\CarLocadora\\CarLocadora.Modelo\\CarLocadora.Modelo.csproj"
-              },
               "D:\\DevPratica\\DevPratica-Projeto\\CarLocadora\\CarLocadora.Negocio\\CarLocadora.Negocio.csproj": {
                 "projectPath": "D:\\DevPratica\\DevPratica-Projeto\\CarLocadora\\CarLocadora.Negocio\\CarLocadora.Negocio.csproj"
               }
@@ -61,7 +58,7 @@
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.2.3, )"
+              "version": "[6.4.0, )"
             }
           },
           "imports": [
@@ -136,6 +133,12 @@
               "target": "Package",
               "version": "[6.0.7, )"
             },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[6.0.7, )"
@@ -207,6 +210,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "System.ComponentModel.Annotations": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

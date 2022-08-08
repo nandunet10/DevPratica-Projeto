@@ -21,11 +21,19 @@
 
 
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-3">
         <div class="form-group">
             <label asp-for="Nome" class="control-label"></label>
             <input asp-for="Nome" class="form-control" />
             <span asp-validation-for="Nome" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="form-group">
+            <label asp-for="DataNascimento" class="control-label"></label>
+            <input asp-for="DataNascimento" class="form-control" />
+            <span asp-validation-for="DataNascimento" class="text-danger"></span>
         </div>
     </div>
 
@@ -103,7 +111,7 @@
         </div>
     </div>
 
-    <div class="col-md-5">
+    @* <div class="col-md-5">
         <div class="form-group">
             <label asp-for="DataInclusao" class="control-label"></label>
             <input asp-for="DataInclusao" class="form-control" disabled />
@@ -117,7 +125,7 @@
             <input asp-for="DataAlteracao" class="form-control" disabled />
             <span asp-validation-for="DataAlteracao" class="text-danger"></span>
         </div>
-    </div>
+    </div> *@
 </div>
 
 

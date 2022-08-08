@@ -5,7 +5,7 @@ namespace CarLocadora.Modelo.Modelos
 {
     public class CategoriaModel
     {
-        [Key][Required][DatabaseGenerated(DatabaseGeneratedOption.Identity)] public int Id { get; set; }
+        [Key][Required][DatabaseGenerated(DatabaseGeneratedOption.Identity)] public int Id { get; set; } = 0;
         [Required][StringLength(100)] public string Descricao { get; set; }
         [Required] public decimal ValorDiaria { get; set; }
         [Required] public bool Ativo { get; set; }

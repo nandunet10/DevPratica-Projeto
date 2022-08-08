@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "p7OHBHjvc+bnPhcLtvAYfXZDVIwCwcrdqeUDikLMPP9YlMGnPu+AUpvSdvLCaQ5faq9A9efRKr3StmWsvH0+3A==",
+  "dgSpecHash": "hypBG8HMBhq9DiPQvkFUoaZ4V6KMKBmVqcL9TlawOFwOrC1GZ7A1hjxbk7X1J8pIauSBlmtTavusF7FiBepGbg==",
   "success": true,
   "projectFilePath": "D:\\DevPratica\\DevPratica-Projeto\\CarLocadora\\CarLocadora.Infra\\CarLocadora.Infra.csproj",
   "expectedPackageFiles": [
@@ -34,6 +34,7 @@
     "C:\\Users\\ba-fernandoos\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\ba-fernandoos\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\ba-fernandoos\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
+    "C:\\Users\\ba-fernandoos\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
     "C:\\Users\\ba-fernandoos\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",
     "C:\\Users\\ba-fernandoos\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
     "C:\\Users\\ba-fernandoos\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512",

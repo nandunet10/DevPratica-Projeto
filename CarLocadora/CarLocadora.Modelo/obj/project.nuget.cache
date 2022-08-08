@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "HbXeczJci+wc7fLjeJUaynz1gWMZPrx6r0HmIATRnuzPKcuu1SYzOR3nctz1chmXMCCMWosaAsHwT6u/X/Otbw==",
+  "dgSpecHash": "kafyTjzN8TBfcf9jJDCZcKz6b7DmBceQkrwCvDU+VHejF+ghgpLIT1GJLh+tYhoC8rtmS/GIuN0PVe5LFvad6g==",
   "success": true,
   "projectFilePath": "D:\\DevPratica\\DevPratica-Projeto\\CarLocadora\\CarLocadora.Modelo\\CarLocadora.Modelo.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\ba-fernandoos\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

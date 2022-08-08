@@ -5,7 +5,7 @@ namespace CarLocadora.Modelo.Modelos
 {
     public class FormasDePagamentoModel
     {
-        [Key][Required][DatabaseGenerated(DatabaseGeneratedOption.Identity)] public int Id { get; set; }
+        [Key][Required][DatabaseGenerated(DatabaseGeneratedOption.Identity)] public int Id { get; set; } = 0;
         [Required][StringLength(150)] public string Descricao { get; set; }
         [Required] public bool Ativo { get; set; }
         [Required] public DateTime DataInclusao { get; set; }
