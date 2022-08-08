@@ -8,39 +8,42 @@
     <span asp-validation-for="Id" class="text-danger"></span>
     </div>
     </div> *@
-<div class="col-md-4">
-    <div class="form-group">
-        <label asp-for="Descricao" class="control-label"></label>
-        <input asp-for="Descricao" class="form-control" />
-        <span asp-validation-for="Descricao" class="text-danger"></span>
+<div style="color: black;">
+
+    <div class="col-md-4">
+        <div class="form-group">
+            <label asp-for="Descricao" class="control-label"></label>
+            <input asp-for="Descricao" class="form-control" />
+            <span asp-validation-for="Descricao" class="text-danger"></span>
+        </div>
     </div>
+    @* <div class="col-md-3">
+        <div class="form-group">
+        <label asp-for="DataInclusao" class="control-label"></label>
+        <input asp-for="DataInclusao" class="form-control" disabled />
+        <span asp-validation-for="DataInclusao" class="text-danger"></span>
+        </div>
+        </div>
+
+        <div class="col-md-3">
+        <div class="form-group">
+        <label asp-for="DataAlteracao" class="control-label"></label>
+        <input asp-for="DataAlteracao" class="form-control" disabled />
+        <span asp-validation-for="DataAlteracao" class="text-danger"></span>
+        </div>
+        </div> *@
+    <br />
+    <div class="col-md-1">
+        <div class="form-group form-check">
+            <label class="form-check-label">
+                <input class="form-check-input" asp-for="Ativo" /> @Html.DisplayNameFor(model => model.Ativo)
+            </label>
+        </div>
+    </div>
+
+    @* </div> *@
+
 </div>
-@* <div class="col-md-3">
-    <div class="form-group">
-    <label asp-for="DataInclusao" class="control-label"></label>
-    <input asp-for="DataInclusao" class="form-control" disabled />
-    <span asp-validation-for="DataInclusao" class="text-danger"></span>
-    </div>
-    </div>
-
-    <div class="col-md-3">
-    <div class="form-group">
-    <label asp-for="DataAlteracao" class="control-label"></label>
-    <input asp-for="DataAlteracao" class="form-control" disabled />
-    <span asp-validation-for="DataAlteracao" class="text-danger"></span>
-    </div>
-    </div> *@
- <br />   
-<div class="col-md-1">
-    <div class="form-group form-check">
-        <label class="form-check-label">
-            <input class="form-check-input" asp-for="Ativo" /> @Html.DisplayNameFor(model => model.Ativo)
-        </label>
-    </div>
-</div>
-
-@* </div> *@
-
 
 <hr />
 <div class="row">

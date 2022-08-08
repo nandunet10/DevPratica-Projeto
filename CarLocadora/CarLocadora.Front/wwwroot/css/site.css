@@ -16,3 +16,9 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+body {
+  background-image: url('../img/LogotipoOriginal.png');
+  background-color: black;
+  background-repeat: no-repeat;
+}
