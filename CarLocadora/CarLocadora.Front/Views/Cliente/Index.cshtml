@@ -4,11 +4,17 @@
     ViewData["Title"] = "Index";
 }
 
+<div class="row">
+    <div class="col-md-2">
+        <p>
+            <a asp-action="Create" class="btn btn-success">Novo</a>
+        </p>
+    </div>
+    <div class="col-md-7">
+        <h3 style="text-align: center">Clientes</h3>
+    </div>
+</div>
 
-
-<p>
-    <a asp-action="Create">Novo</a>
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -74,10 +80,12 @@
                     @Html.DisplayFor(modelItem => item.Ativo)
                 </td>
                 <td>
-                    @Html.ActionLink("Editar", "Edit", new { CPF=item.CPF }) @*|
-                        @Html.ActionLink("Detalhes", "Details", new { CPF=item.CPF}) |
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                        data-bs-cpf="@item.CPF" data-bs-nome="@item.Nome">Excluir</a>*@
+                    <button class="btn-warning">
+                        @Html.ActionLink("Editar", "Edit", new {  CPF=item.CPF  })
+                    </button>
+                    @*| @Html.ActionLink("Detalhes", "Details", new { CPF=item.CPF}) |
+                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                data-bs-cpf="@item.CPF" data-bs-nome="@item.Nome">Excluir</a>*@
                 </td>
             </tr>
         }

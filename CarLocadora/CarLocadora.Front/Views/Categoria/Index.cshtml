@@ -3,10 +3,16 @@
 @{
     ViewData["Title"] = "Index";
 }
-
-<p>
-    <a asp-action="Create">Novo</a>
-</p>
+<div class="row">
+    <div class="col-md-2">
+        <p>
+            <a asp-action="Create" class="btn btn-success">Novo</a>
+        </p>
+    </div>
+    <div class="col-md-7">
+        <h3 style="text-align: center">Categorias</h3>
+    </div>
+</div>
 <table class="table">
     <thead>
         <tr>
@@ -32,7 +38,6 @@
         </tr>
     </thead>
     <tbody>
-<<<<<<< HEAD
         @foreach (var item in Model)
         {
             <tr>
@@ -55,41 +60,17 @@
                     @Html.DisplayFor(modelItem => item.DataAlteracao)
                 </td>
                 <td>
-                    @Html.ActionLink("Editar", "Edit", new {  id=item.Id }) |
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                   data-bs-id="@item.Id" data-bs-nome="@item.Descricao">Excluir</a>
+
+                    <button class="btn-warning">
+                        @Html.ActionLink("Editar", "Edit", new {  id=item.Id  }) |
+                    </button>
+                    <button class="btn-danger">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                       data-bs-id="@item.Id" data-bs-nome="@item.Descricao">Excluir</a>
+                    </button>
                 </td>
             </tr>
         }
-=======
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descricao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ValorDiaria)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ativo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataInclusao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataAlteracao)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new {  id=item.Id }) @*|
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
-            </td>
-        </tr>
-}
->>>>>>> parent of 3e6aed3 (Correções no front!)
     </tbody>
 </table>
 
@@ -118,7 +99,7 @@
     <script type="text/javascript">
 
         var exampleModal = document.getElementById('exampleModal')
-        exampleModal.addEventListener('show.bs.modal', function(event) {
+        exampleModal.addEventListener('show.bs.modal', function (event) {
 
             var button = event.relatedTarget
 
@@ -128,7 +109,7 @@
             var modalBodyDiv = exampleModal.querySelector('.modal-body div')
 
             modalBodyDiv.innerHTML = "Deseja confirmar a exclusão de <b>" + descricao + "?</b>"
-                    + "<br /> Não será possivél recuperar o registro após a exclusão do mesmo!"
+                + "<br /> Não será possivél recuperar o registro após a exclusão do mesmo!"
 
             var modalFooterDiv = exampleModal.querySelector('.modal-footer a')
             modalFooterDiv.href = "/Categoria/Delete?id=" + id

@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "CarLocadora.API/1.0.0": {
         "dependencies": {
+          "CarLocadora.Modelo": "1.0.0",
           "CarLocadora.Negocio": "1.0.0",
           "Microsoft.EntityFrameworkCore.Design": "6.0.7",
           "Swashbuckle.AspNetCore": "6.4.0"
