@@ -5,11 +5,11 @@ namespace CarLocadora.Modelo.Modelos
 {
     public class FormasDePagamentoModel
     {
-        [Key][Required][DatabaseGenerated(DatabaseGeneratedOption.Identity)] public int Id { get; set; } = 0;
-        [Required][StringLength(150)] public string Descricao { get; set; }
-        [Required] public bool Ativo { get; set; }
-        [Required] public DateTime DataInclusao { get; set; }
-        public DateTime? DataAlteracao { get; set; }
+        [Key][Required(ErrorMessage = "Campo obrigatório!")][DatabaseGenerated(DatabaseGeneratedOption.Identity)] public int Id { get; set; } = 0;
+        [Required(ErrorMessage = "Campo obrigatório!")][StringLength(150, ErrorMessage = "Maxímo de 150")] public string Descricao { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório!")] public bool Ativo { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório!")][DataType(DataType.Date)] public DateTime DataInclusao { get; set; }
+        [DataType(DataType.Date)] public DateTime? DataAlteracao { get; set; }
 
     }
 }

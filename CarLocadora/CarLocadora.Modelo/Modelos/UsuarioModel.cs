@@ -5,14 +5,14 @@ namespace CarLocadora.Modelo.Modelos
 {
     public class UsuarioModel : EnderecoModel
     {
-        [Key][Required][StringLength(14)][DatabaseGenerated(DatabaseGeneratedOption.Identity)] public string CPF { get; set; }
-        [Required][StringLength(50)] public string RG { get; set; }
-        [Required][StringLength(150)] public string Nome { get; set; }
-        [Required] public DateTime DataNascimento { get; set; }
-        [StringLength(15)] public string? Telefone { get; set; }
-        [Required][StringLength(15)] public string Celular { get; set; }
-        [Required] public bool Ativo { get; set; }
-        [Required] public DateTime DataInclusao { get; set; }
-        public DateTime? DataAlteracao { get; set; }
+        [Key][Required(ErrorMessage = "Campo obrigatório!")][StringLength(14, ErrorMessage = "Maxímo de 14 caracteres.")][DatabaseGenerated(DatabaseGeneratedOption.Identity)] public string CPF { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório!")][StringLength(50, ErrorMessage = "Maxímo de 50 caracteres.")] public string RG { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório!")][StringLength(150, ErrorMessage = "Maxímo de 150 caracteres.")] public string Nome { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório!")][DataType(DataType.Date)] public DateTime DataNascimento { get; set; }
+        [StringLength(15, ErrorMessage = "Maxímo de 15 caracteres.")] public string? Telefone { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório!")][StringLength(15, ErrorMessage = "Maxímo de 15 caracteres.")] public string Celular { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório!")] public bool Ativo { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório!")][DataType(DataType.Date)] public DateTime DataInclusao { get; set; }
+        [DataType(DataType.Date)] public DateTime? DataAlteracao { get; set; }
     }
 }

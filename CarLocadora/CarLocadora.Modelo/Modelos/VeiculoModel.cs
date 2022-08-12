@@ -5,15 +5,15 @@ namespace CarLocadora.Modelo.Modelos
 {
     public class VeiculoModel
     {
-        [Key][Required][StringLength(8)][DatabaseGenerated(DatabaseGeneratedOption.Identity)] public string Placa { get; set; }
-        [StringLength(100)] public string? Chassi { get; set; }
-        [Required][StringLength(100)] public string Marca { get; set; }
-        [Required][StringLength(150)] public string Modelo { get; set; }
-        [Required][StringLength(100)] public string Combustivel { get; set; }
-        [Required][StringLength(100)] public string Cor { get; set; }
-        [StringLength(2000)] public string? Opcionais { get; set; }
-        [Required] public bool Ativo { get; set; }
-        [Required] public DateTime DataInclusao { get; set; }
-        public DateTime? DataAlteracao { get; set; }
+        [Key][Required(ErrorMessage = "Campo obrigatório!")][StringLength(8, ErrorMessage = "Maxímo de 8 caracteres.")][DatabaseGenerated(DatabaseGeneratedOption.Identity)] public string Placa { get; set; }
+        [StringLength(100, ErrorMessage = "Maxímo de 100 caracteres.")] public string? Chassi { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório!")][StringLength(100, ErrorMessage = "Máximo de 100 caracteres.")] public string Marca { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório!")][StringLength(150, ErrorMessage = "Maxímo de 150 caracteres.")] public string Modelo { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório!")][StringLength(100, ErrorMessage = "Maxímo de 100 caracteres.")] public string Combustivel { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório!")][StringLength(100, ErrorMessage = "Maxímo de 100 caracteres.")] public string Cor { get; set; }
+        [StringLength(2000, ErrorMessage = "Maxímo de 2000 caracteres")] public string? Opcionais { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório!")] public bool Ativo { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório!")][DataType(DataType.Date)] public DateTime DataInclusao { get; set; }
+        [DataType(DataType.Date)] public DateTime? DataAlteracao { get; set; }
     }
 }
