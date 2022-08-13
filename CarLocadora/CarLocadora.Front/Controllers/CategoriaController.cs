@@ -29,6 +29,8 @@ namespace CarLocadora.Front.Controllers
             HttpClient client = new();
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            //client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", new ApiToken(_dadosBase, _loginRespostaModel).Obter());
+
 
             HttpResponseMessage response = client.GetAsync($"{_dadosBase.Value.API_URL_BASE}Categoria").Result;
 

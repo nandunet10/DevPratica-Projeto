@@ -1,11 +1,14 @@
 ﻿using CarLocadora.Modelo.Modelos;
 using CarLocadora.Negocio.Veiculo;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CarLocadora.API.Controller
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
+
     public class VeiculoController : ControllerBase
     {
         private readonly IVeiculoNegocio _veiculoNegocio;

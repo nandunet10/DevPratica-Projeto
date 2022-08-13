@@ -1,11 +1,14 @@
 ﻿using CarLocadora.Modelo.Modelos;
 using CarLocadora.Negocio.Usuario;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CarLocadora.API.Controller
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
+
     public class UsuarioController : ControllerBase
     {
         private readonly IUsuarioNegocio _usuarioNegocio;
