@@ -9,8 +9,8 @@ namespace CarLocadora.Modelo.Modelos
         [Required(ErrorMessage = "Campo obrigatório!")][StringLength(100, ErrorMessage = "Maxímo de 100 caracteres.")] public string Descricao { get; set; }
         [Required(ErrorMessage = "Campo obrigatório!")][Column(TypeName = "decimal(18, 2)")] public decimal ValorDiaria { get; set; }
         [Required(ErrorMessage = "Campo obrigatório!")] public bool Ativo { get; set; }
-        [Required(ErrorMessage = "Campo obrigatório!")][DataType(DataType.Date)] public DateTime DataInclusao { get; set; }
-        [DataType(DataType.Date)] public DateTime? DataAlteracao { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório!")][DataType(DataType.DateTime)] public DateTime DataInclusao { get; set; }
+        [DataType(DataType.DateTime)] public DateTime? DataAlteracao { get; set; }
 
     }
 }

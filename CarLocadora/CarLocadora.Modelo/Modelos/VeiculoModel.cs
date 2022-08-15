@@ -13,7 +13,7 @@ namespace CarLocadora.Modelo.Modelos
         [Required(ErrorMessage = "Campo obrigatório!")][StringLength(100, ErrorMessage = "Maxímo de 100 caracteres.")] public string Cor { get; set; }
         [StringLength(2000, ErrorMessage = "Maxímo de 2000 caracteres")] public string? Opcionais { get; set; }
         [Required(ErrorMessage = "Campo obrigatório!")] public bool Ativo { get; set; }
-        [Required(ErrorMessage = "Campo obrigatório!")][DataType(DataType.Date)] public DateTime DataInclusao { get; set; }
-        [DataType(DataType.Date)] public DateTime? DataAlteracao { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório!")][DataType(DataType.DateTime)] public DateTime DataInclusao { get; set; }
+        [DataType(DataType.DateTime)] public DateTime? DataAlteracao { get; set; }
     }
 }
