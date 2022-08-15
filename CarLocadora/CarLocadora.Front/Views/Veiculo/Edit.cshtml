@@ -4,13 +4,19 @@
     ViewData["Title"] = "Editar dados do Veiculo";
 }
 
-<h4 >Editar veiculo</h4>
+<h4>Editar veiculo</h4>
 <hr />
 <form asp-action="Edit">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <partial name="_Formulario" />
+    <div class="form-group">
+        <input asp-for="DataInclusao" class="form-control" hidden />
+        <span asp-validation-for="DataInclusao" class="text-danger"></span>
+    </div>
 </form>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }
