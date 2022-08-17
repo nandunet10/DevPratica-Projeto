@@ -1,4 +1,5 @@
 ﻿using CarLocadora.Front.Models;
+using CarLocadora.Front.Servico;
 using CarLocadora.Modelo.Modelos;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
@@ -6,7 +7,7 @@ using System.Net.Http.Headers;
 
 namespace CarLocadora.Servico
 {
-    public class ApiToken
+    public class ApiToken : IApiToken
     {
         private readonly IOptions<DadosBase> _dadosBase;
         private readonly IOptions<LoginRespostaModel> _loginRespostaModel;
