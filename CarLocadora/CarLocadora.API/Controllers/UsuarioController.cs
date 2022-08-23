@@ -23,7 +23,7 @@ namespace CarLocadora.API.Controller
         {
             return _usuarioNegocio.ObterLista();
         }
-        [HttpGet("ObterDados")]
+        [HttpGet("{cpf}")]
         public UsuarioModel Get([FromQuery] string cpf)
         {
             return _usuarioNegocio.Obter(cpf);

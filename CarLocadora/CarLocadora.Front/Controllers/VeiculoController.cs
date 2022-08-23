@@ -4,6 +4,7 @@ using CarLocadora.Modelo.Modelos;
 using CarLocadora.Servico;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using System.Net.Http.Headers;
@@ -47,7 +48,7 @@ namespace CarLocadora.Front.Controllers
             }
             else
             {
-                throw new Exception("Deu Zica");
+                throw new Exception("Não foi possível carregar as informações!");
             }
         }
 
@@ -60,6 +61,8 @@ namespace CarLocadora.Front.Controllers
         // GET: VeiculoController/Create
         public ActionResult Create()
         {
+            ViewBag.CategoriasDeVeiculos = CarregarCategoriasDeVeiculos();
+
             return View();
         }
 
@@ -86,7 +89,7 @@ namespace CarLocadora.Front.Controllers
                     }
                     else
                     {
-                        throw new Exception("Deu Zica");
+                        throw new Exception("Não foi possível carregar as informações!");
                     }
 
                 }
@@ -117,11 +120,13 @@ namespace CarLocadora.Front.Controllers
             if (response.IsSuccessStatusCode)
             {
                 string conteudo = response.Content.ReadAsStringAsync().Result;
+                ViewBag.CategoriasDeVeiculos = CarregarCategoriasDeVeiculos();
+
                 return View(JsonConvert.DeserializeObject<VeiculoModel>(conteudo));
             }
             else
             {
-                throw new Exception("Deu Zica");
+                throw new Exception("Não foi possível carregar as informações!");
             }
         }
 
@@ -144,7 +149,7 @@ namespace CarLocadora.Front.Controllers
                     if (response.IsSuccessStatusCode)
                         return RedirectToAction(nameof(Index), new { mensagem = "Registro editado!", sucesso = true });
                     else
-                        throw new Exception("Deu Zica");
+                        throw new Exception("Não foi possível carregar as informações!");
 
                 }
                 else
@@ -179,6 +184,40 @@ namespace CarLocadora.Front.Controllers
             catch
             {
                 return View();
+            }
+        }
+
+        private List<SelectListItem> CarregarCategoriasDeVeiculos()
+        {
+            List<SelectListItem> lista = new List<SelectListItem>();
+
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _apiToken.Obter());
+
+            HttpResponseMessage response = client.GetAsync($"{_dadosBase.Value.API_URL_BASE}Categoria").Result;
+
+            if (response.IsSuccessStatusCode)
+            {
+                string conteudo = response.Content.ReadAsStringAsync().Result;
+                List<CategoriaModel> categorias = JsonConvert.DeserializeObject<List<CategoriaModel>>(conteudo);
+
+                foreach (var linha in categorias)
+                {
+                    lista.Add(new SelectListItem()
+                    {
+                        Value = linha.Id.ToString(),
+                        Text = linha.Descricao,
+                        Selected = false,
+                    });
+                }
+
+                return lista;
+            }
+            else
+            {
+                throw new Exception(response.ReasonPhrase);
             }
         }
     }

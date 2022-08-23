@@ -46,7 +46,7 @@ namespace CarLocadora.Front.Controllers
             }
             else
             {
-                throw new Exception("Deu Zica");
+                throw new Exception("Não foi possível carregar as informações!");
             }
         }
 
@@ -77,7 +77,6 @@ namespace CarLocadora.Front.Controllers
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _apiToken.Obter());
 
-
                     HttpResponseMessage response = client.PostAsJsonAsync($"{_dadosBase.Value.API_URL_BASE}Categoria", model).Result;
 
                     if (response.IsSuccessStatusCode)
@@ -86,9 +85,8 @@ namespace CarLocadora.Front.Controllers
                     }
                     else
                     {
-                        throw new Exception("Deu Zica");
+                        throw new Exception("Não foi possível carregar as informações!");
                     }
-
                 }
                 else
                 {
@@ -113,7 +111,7 @@ namespace CarLocadora.Front.Controllers
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _apiToken.Obter());
 
 
-            HttpResponseMessage response = client.GetAsync($"{_dadosBase.Value.API_URL_BASE}Categoria/ObterDados?Id={id}").Result;
+            HttpResponseMessage response = client.GetAsync($"{_dadosBase.Value.API_URL_BASE}Categoria?Id={id}").Result;
 
             if (response.IsSuccessStatusCode)
             {
@@ -122,7 +120,8 @@ namespace CarLocadora.Front.Controllers
             }
             else
             {
-                throw new Exception("Deu Zica");
+                throw new Exception("Não foi possível carregar as informações!");
+
             }
         }
 
@@ -145,7 +144,7 @@ namespace CarLocadora.Front.Controllers
                     if (response.IsSuccessStatusCode)
                         return RedirectToAction(nameof(Index), new { mensagem = "Registro editado!", sucesso = true });
                     else
-                        throw new Exception("Deu Zica");
+                        throw new Exception("Não foi possível carregar as informações!");
 
                 }
                 else
@@ -174,10 +173,11 @@ namespace CarLocadora.Front.Controllers
 
                 HttpResponseMessage response = client.DeleteAsync($"{_dadosBase.Value.API_URL_BASE}Categoria?Id={id}").Result;
 
-                if (response.IsSuccessStatusCode)                
-                    return RedirectToAction(nameof(Index), new { mensagem = "Registro deletado!", sucesso = true });                
-                else                
-                    throw new Exception("Deu Zica");                
+                if (response.IsSuccessStatusCode)
+                    return RedirectToAction(nameof(Index), new { mensagem = "Registro deletado!", sucesso = true });
+                else
+                    throw new Exception("Não foi possível carregar as informações!");
+
 
             }
             catch (Exception ex)

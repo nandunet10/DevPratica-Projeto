@@ -1,16 +1,20 @@
-﻿@model CarLocadora.Modelo.Modelos.CategoriaModel
+﻿@model CarLocadora.Modelo.Modelos.ManutencaoVeiculoModel
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Create";
 }
 
-<h4>Editar Categoria</h4>
+<h4>Cadastrar Manutenção</h4>
 <hr class="bg-white" />
-<form asp-action="Edit">
+
+<form asp-action="Create">
     <input asp-for="Id" type="hidden" />
     <input asp-for="DataInclusao" type="hidden" />
+    <input asp-for="DataAlteracao" type="hidden" />
     <partial name="_Formulario" />
 </form>
+
+
 
 @section Scripts {
     @{

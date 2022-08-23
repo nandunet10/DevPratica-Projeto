@@ -80,9 +80,7 @@
                     @Html.DisplayFor(modelItem => item.Ativo)
                 </td>
                 <td>
-                    <button class="btn-warning">
-                        @Html.ActionLink("Editar", "Edit", new {  CPF=item.CPF  })
-                    </button>
+                    @Html.ActionLink("Editar", "Edit", new {  CPF=item.CPF  }, new {@class = "btn btn-warning"})
                     @*|@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
                 @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
                 </td>

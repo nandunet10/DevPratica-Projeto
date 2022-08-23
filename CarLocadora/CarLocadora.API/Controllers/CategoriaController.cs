@@ -23,7 +23,7 @@ namespace CarLocadora.API.Controller
         {
             return _categoriaNegocio.ObterLista();
         }
-        [HttpGet("ObterDados")]
+        [HttpGet("{id}")]
         public CategoriaModel Get([FromQuery] int id)
         {
             return _categoriaNegocio.Obter(id);
@@ -39,7 +39,7 @@ namespace CarLocadora.API.Controller
         {
             _categoriaNegocio.Alterar(categoriaModel);
         }
-        [HttpDelete()]
+        [HttpDelete("{id}")]
         public void Delete([FromQuery] int id)
         {
             _categoriaNegocio.Excluir(id);

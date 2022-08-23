@@ -15,5 +15,7 @@ namespace CarLocadora.Modelo.Modelos
         [Required(ErrorMessage = "Campo obrigatório!")] public bool Ativo { get; set; }
         [Required(ErrorMessage = "Campo obrigatório!")][DataType(DataType.DateTime)] public DateTime DataInclusao { get; set; }
         [DataType(DataType.DateTime)] public DateTime? DataAlteracao { get; set; }
+        public int? CategoriaId { get; set; }
+        public CategoriaModel? Categoria { get; set; }
     }
 }

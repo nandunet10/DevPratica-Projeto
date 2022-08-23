@@ -51,11 +51,19 @@
             </div>
         </div>
 
-        <div class="col-md-2">
+        <div class="col-md-4">
             <div class="form-group">
                 <label asp-for="Opcionais" class="control-label"></label>
                 <input asp-for="Opcionais" class="form-control" />
                 <span asp-validation-for="Opcionais" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label asp-for="CategoriaId" class="control-label">Categoria do Veículo</label>
+                <select asp-for="CategoriaId" asp-items="ViewBag.CategoriasDeVeiculos" class="form-control text-uppercase">
+                </select>
             </div>
         </div>
 

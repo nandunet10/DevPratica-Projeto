@@ -46,7 +46,7 @@ namespace CarLocadora.Front.Controllers
             }
             else
             {
-                throw new Exception("Deu Zica");
+                throw new Exception("Não foi possível carregar as informações!");
             }
         }
 
@@ -85,7 +85,7 @@ namespace CarLocadora.Front.Controllers
                     }
                     else
                     {
-                        throw new Exception("Deu Zica");
+                        throw new Exception("Não foi possível carregar as informações!");
                     }
 
                 }
@@ -120,7 +120,7 @@ namespace CarLocadora.Front.Controllers
             }
             else
             {
-                throw new Exception("Deu Zica");
+                throw new Exception("Não foi possível carregar as informações!");
             }
         }
 
@@ -143,7 +143,7 @@ namespace CarLocadora.Front.Controllers
                     if (response.IsSuccessStatusCode)
                         return RedirectToAction(nameof(Index), new { mensagem = "Registro editado!", sucesso = true });
                     else
-                        throw new Exception("Deu Zica");
+                        throw new Exception("Não foi possível carregar as informações!");
 
                 }
                 else

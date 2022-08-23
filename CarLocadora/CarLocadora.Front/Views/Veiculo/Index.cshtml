@@ -90,9 +90,7 @@
                     @Html.DisplayFor(modelItem => item.Ativo)
                 </td>
                 <td>
-                    <button class="btn-warning">
-                        @Html.ActionLink("Editar", "Edit", new {  placa=item.Placa  })
-                    </button>
+                    @Html.ActionLink("Editar", "Edit", new {  placa=item.Placa  }, new {@class = "btn btn-warning"})
                     @*|
                 @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
                 @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
