@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "IM5PHgLvy2/+6q92/kUwKtF25D784tJzsVdvYWYQSrq9TbCrO/LASRl4iBoE0Je0LY/0Px7vATJ2ZVb+2bcyvA==",
+  "dgSpecHash": "mGjUBnBDn4dxyDwrV0622B8/fdng5eIbKv+xWiT3oZMkvvCO5l42EJKW31SWbxhhuljKRhMFas6iUvixhhZQQw==",
   "success": true,
   "projectFilePath": "D:\\DevPratica\\DevPratica-Projeto\\CarLocadora\\CarLocadora.Infra\\CarLocadora.Infra.csproj",
   "expectedPackageFiles": [
@@ -49,12 +49,5 @@
     "C:\\Users\\ba-fernandoos\\.nuget\\packages\\system.text.encoding.codepages\\4.7.0\\system.text.encoding.codepages.4.7.0.nupkg.sha512",
     "C:\\Users\\ba-fernandoos\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1803",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://cdtfs01.susepbr.local/tfs/SUSEP/_packaging/Feed_susep/nuget/v3/index.json'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
-    }
-  ]
+  "logs": []
 }

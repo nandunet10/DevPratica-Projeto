@@ -71,6 +71,34 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/DevPratica/DevPratica-Projeto/CarLocadora/CarLocadora.Front/Views/Locacao/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYWNhb1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DevPratica/DevPratica-Projeto/CarLocadora/CarLocadora.Front/Views/Locacao/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYWNhb1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DevPratica/DevPratica-Projeto/CarLocadora/CarLocadora.Front/Views/Locacao/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYWNhb1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DevPratica/DevPratica-Projeto/CarLocadora/CarLocadora.Front/Views/ManutencaoVeiculo/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFudXRlbmNhb1ZlaWN1bG9cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DevPratica/DevPratica-Projeto/CarLocadora/CarLocadora.Front/Views/ManutencaoVeiculo/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFudXRlbmNhb1ZlaWN1bG9cRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DevPratica/DevPratica-Projeto/CarLocadora/CarLocadora.Front/Views/ManutencaoVeiculo/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFudXRlbmNhb1ZlaWN1bG9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DevPratica/DevPratica-Projeto/CarLocadora/CarLocadora.Front/Views/ManutencaoVeiculo/_Formulario.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFudXRlbmNhb1ZlaWN1bG9cX0Zvcm11bGFyaW8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/DevPratica/DevPratica-Projeto/CarLocadora/CarLocadora.Front/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -109,6 +137,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/DevPratica/DevPratica-Projeto/CarLocadora/CarLocadora.Front/Views/Veiculo/_Formulario.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVpY3Vsb1xfRm9ybXVsYXJpby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DevPratica/DevPratica-Projeto/CarLocadora/CarLocadora.Front/Views/Vistoria/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlzdG9yaWFcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DevPratica/DevPratica-Projeto/CarLocadora/CarLocadora.Front/Views/Vistoria/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlzdG9yaWFcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DevPratica/DevPratica-Projeto/CarLocadora/CarLocadora.Front/Views/Vistoria/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlzdG9yaWFcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/DevPratica/DevPratica-Projeto/CarLocadora/CarLocadora.Front/Views/_ViewImports.cshtml]

@@ -5,7 +5,10 @@ D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.API\bin\Debug\net6.0\Ca
 D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.API\bin\Debug\net6.0\CarLocadora.API.runtimeconfig.json
 D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.API\bin\Debug\net6.0\CarLocadora.API.dll
 D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.API\bin\Debug\net6.0\CarLocadora.API.pdb
+D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.API\bin\Debug\net6.0\AspNetCoreRateLimit.dll
+D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.API\bin\Debug\net6.0\FluentAssertions.dll
 D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.API\bin\Debug\net6.0\Humanizer.dll
+D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.API\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
 D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
 D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -13,6 +16,7 @@ D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.API\bin\Debug\net6.0\Mi
 D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
 D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.API\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.API\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
 D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.API\bin\Debug\net6.0\Microsoft.Identity.Client.dll
 D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.API\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
 D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.API\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
@@ -21,6 +25,8 @@ D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.API\bin\Debug\net6.0\Mi
 D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.API\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
 D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.API\bin\Debug\net6.0\Microsoft.OpenApi.dll
 D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.API\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.API\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Annotations.dll
 D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -46,9 +52,9 @@ D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.API\bin\Debug\net6.0\ru
 D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.API\bin\Debug\net6.0\CarLocadora.Infra.dll
 D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.API\bin\Debug\net6.0\CarLocadora.Modelo.dll
 D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.API\bin\Debug\net6.0\CarLocadora.Negocio.dll
-D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.API\bin\Debug\net6.0\CarLocadora.Modelo.pdb
 D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.API\bin\Debug\net6.0\CarLocadora.Negocio.pdb
 D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.API\bin\Debug\net6.0\CarLocadora.Infra.pdb
+D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.API\bin\Debug\net6.0\CarLocadora.Modelo.pdb
 D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.API\obj\Debug\net6.0\CarLocadora.API.csproj.AssemblyReference.cache
 D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.API\obj\Debug\net6.0\CarLocadora.API.GeneratedMSBuildEditorConfig.editorconfig
 D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.API\obj\Debug\net6.0\CarLocadora.API.AssemblyInfoInputs.cache
