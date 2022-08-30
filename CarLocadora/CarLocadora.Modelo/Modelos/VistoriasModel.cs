@@ -12,7 +12,7 @@ namespace CarLocadora.Modelo.Modelos
     {
         [Key][Required(ErrorMessage = "Campo obrigatório!")][DatabaseGenerated(DatabaseGeneratedOption.Identity)] public int Id { get; set; } = 0;
         [Required(ErrorMessage = "Campo obrigatório!")] public int LocacaoId { get; set; }
-        public LocacaoModel Locacao { get; set; }
+        public LocacoesModel? Locacao { get; set; }
         [Required(ErrorMessage = "Campo obrigatório!")] public long KmSaida { get; set; }
         [Required(ErrorMessage = "Campo obrigatório!")][StringLength(50, ErrorMessage = "Maxímo de 50")] public string CombustivelSaida { get; set; }
         [StringLength(2000, ErrorMessage = "Maxímo de 2000")] public string ObservacaoSaida { get; set; }

@@ -3,9 +3,11 @@ using CarLocadora.Infra.Entity;
 using CarLocadora.Negocio.Categoria;
 using CarLocadora.Negocio.Cliente;
 using CarLocadora.Negocio.FormasDePagamento;
+using CarLocadora.Negocio.Locacoes;
 using CarLocadora.Negocio.ManutencaoVeiculo;
 using CarLocadora.Negocio.Usuario;
 using CarLocadora.Negocio.Veiculo;
+using CarLocadora.Negocio.Vistorias;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -123,6 +125,8 @@ public static class ServicoExtensoes
         services.AddScoped<IUsuarioNegocio, UsuarioNegocio>();
         services.AddScoped<IVeiculoNegocio, VeiculoNegocio>();
         services.AddScoped<IManutencaoVeiculoNegocio, ManutencaoVeiculoNegocio>();
+        services.AddScoped<ILocacoesNegocio, LocacoesNegocio>();
+        services.AddScoped<IVistoriasNegocio, VistoriasNegocio>();
 
     }
 }

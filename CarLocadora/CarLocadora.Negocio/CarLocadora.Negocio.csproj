@@ -10,9 +10,4 @@
     <ProjectReference Include="..\CarLocadora.Infra\CarLocadora.Infra.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Locacoes\" />
-    <Folder Include="Vistorias\" />
-  </ItemGroup>
-
 </Project>

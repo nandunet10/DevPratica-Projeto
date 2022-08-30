@@ -1,0 +1,98 @@
+﻿@model IEnumerable<CarLocadora.Modelo.Modelos.LocacoesModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row">
+    <div class="col-md-2">
+        <p>
+            <a asp-action="Create" class="btn btn-success">Novo</a>
+        </p>
+    </div>
+    <div class="col-md-7">
+        <h3 style="text-align: center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-check" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M10.854 8.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
+                <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
+            </svg> Locações
+        </h3>
+    </div>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClienteCPF)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FormasDePagamentoId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoriasId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataHoraReserva)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataHoraRetiradaPrevista)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataHoraDevolucaoPrevista)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VeiculoPlaca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataInclusao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataAlteracao)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ClienteCPF)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FormasDePagamentoId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CategoriasId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataHoraReserva)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataHoraRetiradaPrevista)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataHoraDevolucaoPrevista)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VeiculoPlaca)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataInclusao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataAlteracao)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new {  id=item.Id  }, new {@class = "btn btn-warning"}) 
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

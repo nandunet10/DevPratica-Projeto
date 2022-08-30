@@ -1,0 +1,88 @@
+﻿@model CarLocadora.Modelo.Modelos.VistoriasModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>VistoriasModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LocacaoId" class="control-label"></label>
+                <input asp-for="LocacaoId" class="form-control" />
+                <span asp-validation-for="LocacaoId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KmSaida" class="control-label"></label>
+                <input asp-for="KmSaida" class="form-control" />
+                <span asp-validation-for="KmSaida" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CombustivelSaida" class="control-label"></label>
+                <input asp-for="CombustivelSaida" class="form-control" />
+                <span asp-validation-for="CombustivelSaida" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ObservacaoSaida" class="control-label"></label>
+                <input asp-for="ObservacaoSaida" class="form-control" />
+                <span asp-validation-for="ObservacaoSaida" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataHoraRetiradaPatio" class="control-label"></label>
+                <input asp-for="DataHoraRetiradaPatio" class="form-control" />
+                <span asp-validation-for="DataHoraRetiradaPatio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KmEntrada" class="control-label"></label>
+                <input asp-for="KmEntrada" class="form-control" />
+                <span asp-validation-for="KmEntrada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CombustivelEntrada" class="control-label"></label>
+                <input asp-for="CombustivelEntrada" class="form-control" />
+                <span asp-validation-for="CombustivelEntrada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ObservacaoEntrada" class="control-label"></label>
+                <input asp-for="ObservacaoEntrada" class="form-control" />
+                <span asp-validation-for="ObservacaoEntrada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataHoraDevolucaoPatio" class="control-label"></label>
+                <input asp-for="DataHoraDevolucaoPatio" class="form-control" />
+                <span asp-validation-for="DataHoraDevolucaoPatio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataInclusao" class="control-label"></label>
+                <input asp-for="DataInclusao" class="form-control" />
+                <span asp-validation-for="DataInclusao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataAlteracao" class="control-label"></label>
+                <input asp-for="DataAlteracao" class="form-control" />
+                <span asp-validation-for="DataAlteracao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

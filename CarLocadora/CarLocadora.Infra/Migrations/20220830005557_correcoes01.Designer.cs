@@ -4,6 +4,7 @@ using CarLocadora.Infra.Entity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CarLocadora.Infra.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20220830005557_correcoes01")]
+    partial class correcoes01
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -162,6 +164,9 @@ namespace CarLocadora.Infra.Migrations
                         .HasMaxLength(14)
                         .HasColumnType("nvarchar(14)");
 
+                    b.Property<string>("ClientesCPF")
+                        .HasColumnType("nvarchar(14)");
+
                     b.Property<DateTime?>("DataAlteracao")
                         .HasColumnType("datetime2");
 
@@ -189,7 +194,7 @@ namespace CarLocadora.Infra.Migrations
 
                     b.HasIndex("CategoriasId");
 
-                    b.HasIndex("ClienteCPF");
+                    b.HasIndex("ClientesCPF");
 
                     b.HasIndex("FormasDePagamentoId");
 
@@ -422,11 +427,9 @@ namespace CarLocadora.Infra.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CarLocadora.Modelo.Modelos.ClienteModel", "Cliente")
+                    b.HasOne("CarLocadora.Modelo.Modelos.ClienteModel", "Clientes")
                         .WithMany()
-                        .HasForeignKey("ClienteCPF")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ClientesCPF");
 
                     b.HasOne("CarLocadora.Modelo.Modelos.FormasDePagamentoModel", "FormasDePagamento")
                         .WithMany()
@@ -442,7 +445,7 @@ namespace CarLocadora.Infra.Migrations
 
                     b.Navigation("Categorias");
 
-                    b.Navigation("Cliente");
+                    b.Navigation("Clientes");
 
                     b.Navigation("FormasDePagamento");
 

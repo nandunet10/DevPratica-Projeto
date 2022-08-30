@@ -12,7 +12,7 @@ namespace CarLocadora.API.Controller
     public class FormasDePagamentoController : ControllerBase
     {
         private readonly IFormasDePagamentoNegocio _formasDePagamentoNegocio;
-           public FormasDePagamentoController(IFormasDePagamentoNegocio formasDePagamentoNegocio)
+        public FormasDePagamentoController(IFormasDePagamentoNegocio formasDePagamentoNegocio)
         {
             _formasDePagamentoNegocio = formasDePagamentoNegocio;
         }
