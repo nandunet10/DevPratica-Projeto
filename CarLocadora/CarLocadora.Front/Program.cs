@@ -10,6 +10,8 @@ builder.Services.Configure<DadosBase>(builder.Configuration.GetSection("DadosBas
 
 builder.Services.AddScoped<IApiToken, ApiToken>();
 
+builder.Services.AddHttpClient();
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 

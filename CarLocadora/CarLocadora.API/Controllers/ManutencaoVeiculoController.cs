@@ -22,24 +22,24 @@ namespace CarLocadora.API.Controllers
 
         // GET: api/<ManutencaoVeiculoController>
         [HttpGet()]
-        public List<ManutencaoVeiculoModel> Get()
+        public async Task<List<ManutencaoVeiculoModel>> Get()
         {
-            return _manutencaoVeiculoNegocio.ObterLista();
+            return await _manutencaoVeiculoNegocio.ObterLista();
         }
 
         // GET api/<ManutencaoVeiculoController>/5
         [HttpGet("{id}")]
-        public ManutencaoVeiculoModel Get([FromQuery] int id)
+        public async Task<ManutencaoVeiculoModel> Get([FromQuery] int id)
         {
-            return _manutencaoVeiculoNegocio.Obter(id);
+            return await _manutencaoVeiculoNegocio.Obter(id);
 
         }
 
         // POST api/<ManutencaoVeiculoController>
         [HttpPost]
-        public void Post([FromBody] ManutencaoVeiculoModel manutencaoVeiculoModel)
+        public async Task Post([FromBody] ManutencaoVeiculoModel manutencaoVeiculoModel)
         {
-            _manutencaoVeiculoNegocio.Inserir(manutencaoVeiculoModel);
+            await _manutencaoVeiculoNegocio.Inserir(manutencaoVeiculoModel);
         }
 
         // PUT api/<ManutencaoVeiculoController>/5
@@ -51,9 +51,9 @@ namespace CarLocadora.API.Controllers
 
         // DELETE api/<ManutencaoVeiculoController>/5
         [HttpDelete("{id}")]
-        public void Delete([FromQuery] int id)
+        public async Task Delete([FromQuery] int id)
         {
-            _manutencaoVeiculoNegocio.Excluir(id);
+            await _manutencaoVeiculoNegocio.Excluir(id);
         }
     }
 }

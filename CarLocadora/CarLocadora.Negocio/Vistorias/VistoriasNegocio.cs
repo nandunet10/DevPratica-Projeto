@@ -1,5 +1,6 @@
 ﻿using CarLocadora.Infra.Entity;
 using CarLocadora.Modelo.Modelos;
+using Microsoft.EntityFrameworkCore;
 
 namespace CarLocadora.Negocio.Vistorias
 {
@@ -11,25 +12,23 @@ namespace CarLocadora.Negocio.Vistorias
             _context = context;
         }
 
-        public void Alterar(VistoriasModel model)
+        public async Task Alterar(VistoriasModel model)
         {
             model.DataAlteracao = DateTime.Now;
             _context.Vistorias.Update(model);
-            _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
         }
 
-        public void Inserir(VistoriasModel model)
+        public async Task Inserir(VistoriasModel model)
         {
             model.DataInclusao = DateTime.Now;
-            _context.Vistorias.AddAsync(model);
-            _context.SaveChangesAsync();
+            await _context.Vistorias.AddAsync(model);
+            await _context.SaveChangesAsync();
         }
 
-        public VistoriasModel Obter(int id) => _context.Vistorias.SingleOrDefault(x => x.Id.Equals(id));
+        public async Task<VistoriasModel> Obter(int id) => await _context.Vistorias.SingleOrDefaultAsync(x => x.Id.Equals(id));
 
-        public List<VistoriasModel> ObterLista()
-        {
-            return _context.Vistorias.ToList();
-        }
+        public async Task<List<VistoriasModel>> ObterLista() => await _context.Vistorias.ToListAsync();
+        
     }
 }

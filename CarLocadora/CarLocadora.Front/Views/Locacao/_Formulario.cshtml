@@ -1,0 +1,75 @@
+﻿@model CarLocadora.Modelo.Modelos.LocacoesModel
+
+
+<hr />
+
+<div class="row">
+
+    <div class="col-sm-12">
+        <div class="form-group">
+            <label asp-for="ClienteCPF" class="control-label"></label>
+            <select asp-for="ClienteCPF" asp-items="ViewBag.Clientes" class="form-control text-uppercase" />
+            <span asp-validation-for="ClienteCPF" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="col-sm-12">
+        <div class="form-group">
+            <label asp-for="VeiculoPlaca" class="control-label"></label>
+            <select asp-for="VeiculoPlaca" asp-items="ViewBag.Veiculos" class="form-control text-uppercase" />
+
+            <span asp-validation-for="VeiculoPlaca" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="col-sm-12">
+        <div class="form-group">
+            <label asp-for="FormasDePagamento" class="control-label"></label>
+            <select asp-for="FormasDePagamento" asp-items="ViewBag.FormasDePagamento" class="form-control text-uppercase" />
+            <span asp-validation-for="FormasDePagamento" class="text-danger"></span>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+
+    <div class="col-md-12">
+        <div class="form-group">
+            <label asp-for="DataHoraReserva" class="control-label"></label>
+            <input asp-for="DataHoraReserva" class="form-control" />
+            <span asp-validation-for="DataHoraReserva" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="form-group">
+            <label asp-for="DataHoraRetiradaPrevista" class="control-label"></label>
+            <input asp-for="DataHoraRetiradaPrevista" class="form-control" />
+            <span asp-validation-for="DataHoraRetiradaPrevista" class="text-danger"></span>
+
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="form-group">
+            <label asp-for="DataHoraDevolucaoPrevista" class="control-label"></label>
+            <input asp-for="DataHoraDevolucaoPrevista" class="form-control" />
+            <span asp-validation-for="DataHoraDevolucaoPrevista" class="text-danger"></span>
+        </div>
+    </div>
+
+</div>
+
+<hr />
+<div class="row">
+    <div class="col-md-1">
+        <div>
+            <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+        </div>
+    </div>
+    <div class="col-md-1">
+        <div class="form-group">
+            <input type="submit" value="Salvar" class="btn btn-primary" />
+        </div>
+    </div>
+</div>

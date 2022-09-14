@@ -4,21 +4,19 @@
     ViewData["Title"] = "Edit";
 }
 
-<h4 >Editar usuario</h4>
-<hr />
+<h4>Editar usuario</h4>
+<hr class="bg-white" />
+
 <form asp-action="Edit">
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input asp-for="DataInclusao" type="hidden" />
+    <input asp-for="DataAlteracao" type="hidden" />
     <partial name="_Formulario" />
-    <div class="col-md-5">
-        <div class="form-group">
-            <input asp-for="DataInclusao" class="form-control" hidden />
-            <span asp-validation-for="DataInclusao" class="text-danger"></span>
-        </div>
-    </div>
 </form>
 
 
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

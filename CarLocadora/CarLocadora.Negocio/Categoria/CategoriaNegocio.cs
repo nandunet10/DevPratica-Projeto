@@ -1,5 +1,6 @@
 ﻿using CarLocadora.Infra.Entity;
 using CarLocadora.Modelo.Modelos;
+using Microsoft.EntityFrameworkCore;
 
 namespace CarLocadora.Negocio.Categoria
 {
@@ -12,33 +13,30 @@ namespace CarLocadora.Negocio.Categoria
             _context = context;
         }
 
-        public void Alterar(CategoriaModel model)
+        public async Task Alterar(CategoriaModel model)
         {
             model.DataAlteracao = DateTime.Now;
             _context.Update(model);
-            _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
         }
 
-        public void Excluir(int id)
+        public async Task Excluir(int id)
         {
-            CategoriaModel model = _context.Categorias.SingleOrDefault(x => x.Id.Equals(id));
+            CategoriaModel model = await _context.Categorias.SingleOrDefaultAsync(predicate: x => x.Id.Equals(id));
             _context.Remove(model);
-            _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
         }
 
-        public void Inserir(CategoriaModel model)
+        public async Task Inserir(CategoriaModel model)
         {
             model.DataInclusao = DateTime.Now;
-            _context.AddAsync(model);
-            _context.SaveChangesAsync();
+            await _context.AddAsync(model);
+            await _context.SaveChangesAsync();
         }
 
-        public CategoriaModel Obter(int id)
-        {
-            return _context.Categorias.SingleOrDefault(x => x.Id.Equals(id));
-        }
+        public async Task<CategoriaModel> Obter(int id) => await _context.Categorias.SingleOrDefaultAsync(x => x.Id.Equals(id));
 
-        public List<CategoriaModel> ObterLista() => _context.Categorias.ToList();
+        public async Task<List<CategoriaModel>> ObterLista() => await _context.Categorias.ToListAsync();
 
     }
 }

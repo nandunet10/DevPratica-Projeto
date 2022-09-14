@@ -4,11 +4,13 @@
     ViewData["Title"] = "Edit";
 }
 
-<h4>Editar Categoria</h4>
+<h4>Editar manutenção</h4>
 <hr class="bg-white" />
+
 <form asp-action="Edit">
     <input asp-for="Id" type="hidden" />
     <input asp-for="DataInclusao" type="hidden" />
+    <input asp-for="DataAlteracao" type="hidden" />
     <partial name="_Formulario" />
 </form>
 

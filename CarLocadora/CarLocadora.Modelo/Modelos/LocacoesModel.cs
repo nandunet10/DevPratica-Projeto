@@ -10,14 +10,12 @@ namespace CarLocadora.Modelo.Modelos
         public ClienteModel? Cliente { get; set; }
         [Required(ErrorMessage = "Campo obrigatório!")] public int FormasDePagamentoId { get; set; }
         public FormasDePagamentoModel? FormasDePagamento { get; set; }
-        [Required(ErrorMessage = "Campo obrigatório!")] public int CategoriasId { get; set; }
-        public CategoriaModel? Categorias { get; set; }
-        [Required(ErrorMessage = "Campo obrigatório!")] public DateTime DataHoraReserva { get; set; }
-        [Required(ErrorMessage = "Campo obrigatório!")] public DateTime DataHoraRetiradaPrevista { get; set; }
-        [Required(ErrorMessage = "Campo obrigatório!")] public DateTime DataHoraDevolucaoPrevista { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório!")][Display(Name = "Data reserva")] public DateTime DataHoraReserva { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório!")][Display(Name = "Data retirada")] public DateTime DataHoraRetiradaPrevista { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório!")][Display(Name = "Data devolução")] public DateTime DataHoraDevolucaoPrevista { get; set; }
         [StringLength(8)] public string VeiculoPlaca { get; set; }
         public VeiculoModel? Veiculo { get; set; }
-        [Required(ErrorMessage = "Campo obrigatório!")][DataType(DataType.DateTime)] public DateTime DataInclusao { get; set; }
-        [DataType(DataType.DateTime)] public DateTime? DataAlteracao { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório!")][DataType(DataType.DateTime)][Display(Name = "Data inclusão")] public DateTime DataInclusao { get; set; }
+        [DataType(DataType.DateTime)][Display(Name = "Data alteração")] public DateTime? DataAlteracao { get; set; }
     }
 }

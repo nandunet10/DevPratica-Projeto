@@ -5,14 +5,12 @@
 }
 
 <h4>Editar veiculo</h4>
-<hr />
+<hr class="bg-white" />
+
 <form asp-action="Edit">
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input asp-for="DataInclusao" type="hidden" />
+    <input asp-for="DataAlteracao" type="hidden" />
     <partial name="_Formulario" />
-    <div class="form-group">
-        <input asp-for="DataInclusao" class="form-control" hidden />
-        <span asp-validation-for="DataInclusao" class="text-danger"></span>
-    </div>
 </form>
 
 @section Scripts {

@@ -1,5 +1,6 @@
 ﻿using CarLocadora.Infra.Entity;
 using CarLocadora.Modelo.Modelos;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,29 +17,29 @@ namespace CarLocadora.Negocio.ManutencaoVeiculo
             _context = context;
         }
 
-        public void Alterar(ManutencaoVeiculoModel model)
+        public async Task Alterar(ManutencaoVeiculoModel model)
         {
             model.DataAlteracao = DateTime.Now;
             _context.Update(model);
-            _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
         }
 
-        public void Excluir(int id)
+        public async Task Excluir(int id)
         {
             ManutencaoVeiculoModel model = _context.ManutencaoVeiculos.SingleOrDefault(x => x.Id.Equals(id));
             _context.Remove(model);
-            _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
         }
 
-        public void Inserir(ManutencaoVeiculoModel model)
+        public async Task Inserir(ManutencaoVeiculoModel model)
         {
             model.DataInclusao = DateTime.Now;
-            _context.AddAsync(model);
-            _context.SaveChangesAsync();
+            await _context.AddAsync(model);
+            await _context.SaveChangesAsync();
         }
-        public ManutencaoVeiculoModel Obter(int id) => _context.ManutencaoVeiculos.SingleOrDefault(x => x.Id.Equals(id));
+        public async Task<ManutencaoVeiculoModel> Obter(int id) => await _context.ManutencaoVeiculos.SingleOrDefaultAsync(x => x.Id.Equals(id));
 
-        public List<ManutencaoVeiculoModel> ObterLista() => _context.ManutencaoVeiculos.ToList();
-  
+        public async Task<List<ManutencaoVeiculoModel>> ObterLista() => await _context.ManutencaoVeiculos.ToListAsync();
+
     }
 }

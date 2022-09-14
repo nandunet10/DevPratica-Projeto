@@ -23,11 +23,8 @@ namespace CarLocadora.Modelo.Modelos
         [Required(ErrorMessage = "O valor da diária é obrigatório.")]
         public decimal ValorServico { get; set; }
 
-        [Display(Name = "Data de Inclusão")]
-        public DateTime DataInclusao { get; set; }
-
-        [Display(Name = "Data de Alteração")]
-        public DateTime? DataAlteracao { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório!")][DataType(DataType.DateTime)][Display(Name = "Data inclusão")] public DateTime DataInclusao { get; set; }
+        [DataType(DataType.DateTime)][Display(Name = "Data alteração")] public DateTime? DataAlteracao { get; set; }
 
         [Display(Name = "Placa do Veículo")]
         public string VeiculoPlaca { get; set; } = "";

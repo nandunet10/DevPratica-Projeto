@@ -4,9 +4,9 @@ namespace CarLocadora.Negocio.FormasDePagamento
 {
     public interface IFormasDePagamentoNegocio
     {
-        List<FormasDePagamentoModel> ObterLista();
-        void Inserir(FormasDePagamentoModel model);
-        void Alterar(FormasDePagamentoModel model);
-        FormasDePagamentoModel Obter(int id);
+        Task<List<FormasDePagamentoModel>> ObterLista();
+        Task Inserir(FormasDePagamentoModel model);
+        Task Alterar(FormasDePagamentoModel model);
+        Task<FormasDePagamentoModel> Obter(int id);
     }
 }

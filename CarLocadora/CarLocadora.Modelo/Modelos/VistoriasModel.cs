@@ -21,8 +21,8 @@ namespace CarLocadora.Modelo.Modelos
         [StringLength(50, ErrorMessage = "Maxímo de 50")] public string CombustivelEntrada { get; set; }
         [StringLength(2000, ErrorMessage = "Maxímo de 2000")] public string ObservacaoEntrada { get; set; }
         public DateTime DataHoraDevolucaoPatio { get; set; }
-        [Required(ErrorMessage = "Campo obrigatório!")][DataType(DataType.DateTime)] public DateTime DataInclusao { get; set; }
-        [DataType(DataType.DateTime)] public DateTime? DataAlteracao { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório!")][DataType(DataType.DateTime)][Display(Name = "Data inclusão")] public DateTime DataInclusao { get; set; }
+        [DataType(DataType.DateTime)][Display(Name = "Data alteração")] public DateTime? DataAlteracao { get; set; }
 
     }
 }

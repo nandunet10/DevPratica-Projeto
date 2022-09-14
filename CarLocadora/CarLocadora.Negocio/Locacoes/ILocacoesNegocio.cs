@@ -9,9 +9,9 @@ namespace CarLocadora.Negocio.Locacoes
 {
     public interface ILocacoesNegocio
     {
-        List<LocacoesModel> ObterLista();
-        void Inserir(LocacoesModel model);
-        void Alterar(LocacoesModel model);
-        LocacoesModel Obter(int id);
+        Task<List<LocacoesModel>> ObterLista();
+        Task Inserir(LocacoesModel model);
+        Task Alterar(LocacoesModel model);
+        Task<LocacoesModel> Obter(int id);
     }
 }

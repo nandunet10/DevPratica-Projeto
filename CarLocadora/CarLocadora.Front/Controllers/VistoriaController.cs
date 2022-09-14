@@ -17,50 +17,42 @@ namespace CarLocadora.Front.Controllers
         private readonly IOptions<DadosBase> _dadosBase;
         private readonly IOptions<LoginRespostaModel> _loginRespostaModel;
         private readonly IApiToken _apiToken;
-
-        public VistoriaController(IOptions<DadosBase> dadosBase, IOptions<LoginRespostaModel> loginRespostaModel, IApiToken apiToken)
+        private readonly HttpClient _httpClient;
+        public VistoriaController(IOptions<DadosBase> dadosBase, IOptions<LoginRespostaModel> loginRespostaModel, IApiToken apiToken, IHttpClientFactory httpClient)
         {
             _dadosBase = dadosBase;
             _loginRespostaModel = loginRespostaModel;
             _apiToken = apiToken;
+            _httpClient = httpClient.CreateClient();
+            _httpClient.DefaultRequestHeaders.Accept.Clear();
+            _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
         // GET: VistoriasController
-        public ActionResult Index(string? mensagem = null, bool sucesso = true)
+        public async Task<IActionResult> Index(string? mensagem = null, bool sucesso = true)
         {
             if (sucesso)
                 TempData["sucesso"] = mensagem;
             else
                 TempData["erro"] = mensagem;
 
-            HttpClient client = new();
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _apiToken.Obter());
-
-            HttpResponseMessage response = client.GetAsync($"{_dadosBase.Value.API_URL_BASE}Vistoria").Result;
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", await _apiToken.Obter());
+            HttpResponseMessage response = _httpClient.GetAsync($"{_dadosBase.Value.API_URL_BASE}Vistoria").Result;
 
             if (response.IsSuccessStatusCode)
-            {
-                string conteudo = response.Content.ReadAsStringAsync().Result;
-                return View(JsonConvert.DeserializeObject<List<VistoriasModel>>(conteudo));
-            }
+                return View(JsonConvert.DeserializeObject<List<VistoriasModel>>(response.Content.ReadAsStringAsync().Result));
             else
-            {
                 throw new Exception("Não foi possível carregar as informações!");
-
-            }
-
         }
 
         // GET: VistoriasController/Details/5
-        public ActionResult Details(int id)
+        public async Task<IActionResult> Details(int id)
         {
             return View();
         }
 
         // GET: VistoriasController/Create
-        public ActionResult Create()
+        public async Task<IActionResult> Create()
         {
             return View();
         }
@@ -68,28 +60,19 @@ namespace CarLocadora.Front.Controllers
         // POST: VistoriasController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([FromForm] VistoriasModel model)
+        public async Task<IActionResult> Create([FromForm] VistoriasModel model)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-
-                    HttpClient client = new();
-                    client.DefaultRequestHeaders.Accept.Clear();
-                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _apiToken.Obter());
-
-                    HttpResponseMessage response = client.PostAsJsonAsync($"{_dadosBase.Value.API_URL_BASE}Vistoria", model).Result;
+                    _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", await _apiToken.Obter());
+                    HttpResponseMessage response = _httpClient.PostAsJsonAsync($"{_dadosBase.Value.API_URL_BASE}Vistoria", model).Result;
 
                     if (response.IsSuccessStatusCode)
-                    {
                         return RedirectToAction(nameof(Index), new { mensagem = "Registro criado!", sucesso = true });
-                    }
                     else
-                    {
                         throw new Exception("Não foi possível carregar as informações!");
-                    }
                 }
                 else
                 {
@@ -106,49 +89,33 @@ namespace CarLocadora.Front.Controllers
         }
 
         // GET: VistoriasController/Edit/5
-        public ActionResult Edit(int id)
+        public async Task<IActionResult> Edit(int id)
         {
-            HttpClient client = new();
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _apiToken.Obter());
-
-
-            HttpResponseMessage response = client.GetAsync($"{_dadosBase.Value.API_URL_BASE}Vistoria?Id={id}").Result;
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", await _apiToken.Obter());
+            HttpResponseMessage response = _httpClient.GetAsync($"{_dadosBase.Value.API_URL_BASE}Vistoria/ObterDados?Id={id}").Result;
 
             if (response.IsSuccessStatusCode)
-            {
-                string conteudo = response.Content.ReadAsStringAsync().Result;
-                return View(JsonConvert.DeserializeObject<VistoriasModel>(conteudo));
-            }
+                return View(JsonConvert.DeserializeObject<VistoriasModel>(response.Content.ReadAsStringAsync().Result));
             else
-            {
                 throw new Exception("Não foi possível carregar as informações!");
-
-            }
         }
 
         // POST: VistoriasController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([FromForm] VistoriasModel model)
+        public async Task<IActionResult> Edit([FromForm] VistoriasModel model)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    HttpClient client = new();
-                    client.DefaultRequestHeaders.Accept.Clear();
-                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _apiToken.Obter());
-
-                    HttpResponseMessage response = client.PutAsJsonAsync($"{_dadosBase.Value.API_URL_BASE}Vistoria", model).Result;
+                    _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", await _apiToken.Obter());
+                    HttpResponseMessage response = _httpClient.PutAsJsonAsync($"{_dadosBase.Value.API_URL_BASE}Vistoria", model).Result;
 
                     if (response.IsSuccessStatusCode)
                         return RedirectToAction(nameof(Index), new { mensagem = "Registro editado!", sucesso = true });
                     else
                         throw new Exception("Não foi possível carregar as informações!");
-
                 }
                 else
                 {
@@ -159,13 +126,12 @@ namespace CarLocadora.Front.Controllers
             catch (Exception ex)
             {
                 TempData["erro"] = "Algum erro aconteceu " + ex.Message;
-
                 return View();
             }
         }
 
         // GET: VistoriasController/Delete/5
-        public ActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             return View();
         }
@@ -173,7 +139,7 @@ namespace CarLocadora.Front.Controllers
         // POST: VistoriasController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public async Task<IActionResult> Delete(int id, IFormCollection collection)
         {
             try
             {

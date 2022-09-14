@@ -4,9 +4,9 @@ namespace CarLocadora.Negocio.Veiculo
 {
     public interface IVeiculoNegocio
     {
-        List<VeiculoModel> ObterLista();
-        void Inserir(VeiculoModel model);
-        void Alterar(VeiculoModel model);
-        VeiculoModel Obter(string placa);
+        Task<List<VeiculoModel>> ObterLista();
+        Task Inserir(VeiculoModel model);
+        Task Alterar(VeiculoModel model);
+        Task<VeiculoModel> Obter(string placa);
     }
 }

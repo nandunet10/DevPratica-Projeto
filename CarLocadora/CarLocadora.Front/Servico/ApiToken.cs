@@ -18,7 +18,7 @@ namespace CarLocadora.Servico
             _loginRespostaModel = loginRespostaModel;
         }
 
-        private void ObterToken() 
+        private async Task ObterToken() 
         {
             HttpClient cliente = new();
             cliente.DefaultRequestHeaders.Accept.Clear();
@@ -30,12 +30,11 @@ namespace CarLocadora.Servico
                 Senha = "SenhaDevPratica"
             };
 
-            HttpResponseMessage response = cliente.PostAsJsonAsync($"{_dadosBase.Value.API_URL_BASE}Login", loginRequisicaoModel).Result;
+            HttpResponseMessage response = await cliente.PostAsJsonAsync($"{_dadosBase.Value.API_URL_BASE}Login", loginRequisicaoModel);
 
             if (response.IsSuccessStatusCode)
             {
-                string conteudo = response.Content.ReadAsStringAsync().Result;
-                LoginRespostaModel loginRespostaModel = JsonConvert.DeserializeObject<LoginRespostaModel>(conteudo);
+                LoginRespostaModel loginRespostaModel = JsonConvert.DeserializeObject<LoginRespostaModel>(await response.Content.ReadAsStringAsync());
 
                 if (loginRespostaModel.Autenticado == true)
                 {
@@ -51,17 +50,17 @@ namespace CarLocadora.Servico
             }
         }
 
-        public string Obter() 
+        public async Task<string> Obter() 
         {
             if (_loginRespostaModel.Value.Autenticado == false)
             {
-                ObterToken();
+                await ObterToken();
             }
             else
             {
                 if (DateTime.Now >= _loginRespostaModel.Value.DataExpiracao)
                 {
-                    ObterToken();
+                   await ObterToken();
                 }
             }
             return _loginRespostaModel.Value.Token;
