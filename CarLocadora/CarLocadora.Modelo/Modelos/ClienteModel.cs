@@ -14,6 +14,8 @@ namespace CarLocadora.Modelo.Modelos
         [Required(ErrorMessage = "Campo obrigatório!")] public bool Ativo { get; set; }
         [Required(ErrorMessage = "Campo obrigatório!")][DataType(DataType.DateTime)][Display(Name = "Data inclusão")] public DateTime DataInclusao { get; set; }
         [DataType(DataType.DateTime)][Display(Name = "Data alteração")] public DateTime? DataAlteracao { get; set; }
+        [StringLength(100, ErrorMessage = "Maxímo de 100 caracteres")][Display(Name = "E-mail")] public string? Email { get; set; }
+        [Display(Name = "E-mail Enviado")] public bool EmailEnviado { get; set; } = false;
 
     }
 }

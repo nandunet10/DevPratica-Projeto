@@ -1,5 +1,4 @@
 ﻿using AspNetCoreRateLimit;
-using CarLocadora.Infra.Entity;
 using CarLocadora.Negocio.Categoria;
 using CarLocadora.Negocio.Cliente;
 using CarLocadora.Negocio.FormasDePagamento;
@@ -9,7 +8,6 @@ using CarLocadora.Negocio.Usuario;
 using CarLocadora.Negocio.Veiculo;
 using CarLocadora.Negocio.Vistorias;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Security.Cryptography;
@@ -70,7 +68,7 @@ public static class ServicoExtensoes
                 RequireExpirationTime = true,
                 ClockSkew = TimeSpan.Zero,
                 ValidIssuer = "EmitenteDoJWT",
-                ValidAudience = "DestinatarioDoJWT", 
+                ValidAudience = "DestinatarioDoJWT",
                 IssuerSigningKey = new SymmetricSecurityKey(
                     Convert.FromBase64String(Environment.GetEnvironmentVariable("JWT_SECRETO"))),
 

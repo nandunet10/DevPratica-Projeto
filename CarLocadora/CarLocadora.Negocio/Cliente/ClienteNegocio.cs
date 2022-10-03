@@ -28,5 +28,10 @@ namespace CarLocadora.Negocio.Cliente
         public async Task<ClienteModel> ObterAsync(string cpf) => await _context.Clientes.SingleOrDefaultAsync(x => x.CPF.Equals(cpf));
 
         public async Task<List<ClienteModel>> ObterLista() => await _context.Clientes.ToListAsync();
+
+        public async Task<List<ClienteModel>> ObterListaEnviarEmail()
+        {
+            return await _context.Clientes.Where(x => x.Email != null && x.EmailEnviado.Equals(false)).ToListAsync();
+        }
     }
 }

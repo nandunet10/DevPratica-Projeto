@@ -7,7 +7,7 @@ namespace CarLocadora.API.Controller
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
 
     public class ClienteController : ControllerBase
     {
@@ -21,6 +21,12 @@ namespace CarLocadora.API.Controller
         public async Task<List<ClienteModel>> Get()
         {
             return await _clienteNegocio.ObterLista();
+        }
+
+        [HttpGet("ObterListaEnviarEmail")]
+        public async Task<List<ClienteModel>> GetObterListaEnviarEmail()
+        {
+            return await _clienteNegocio.ObterListaEnviarEmail();
         }
         [HttpGet("{cpf}")]
         public async Task<ClienteModel> Get([FromQuery] string cpf)
