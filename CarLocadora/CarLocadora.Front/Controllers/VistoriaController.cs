@@ -1,12 +1,10 @@
-﻿using CarLocadora.Front.Models;
-using CarLocadora.Front.Servico;
+﻿using CarLocadora.Comum.Modelo;
+using CarLocadora.Comum.Servico;
 using CarLocadora.Modelo.Modelos;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using System.Net.Http.Headers;
-using System.Reflection;
 
 namespace CarLocadora.Front.Controllers
 {

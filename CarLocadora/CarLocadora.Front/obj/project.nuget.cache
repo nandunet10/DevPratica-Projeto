@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "/YOlh0oKw+l4y0kuN1u9PStVqbtUWqMtqmovQ4nhIvORLLWvMawbtANIh9oWROrd1nfVlWPhqTD5wPK7OHPISw==",
+  "dgSpecHash": "snh7DkiTSnO6EUd0L1Za/6KIJ0jfTdPMHmH9/VOpUhudGafnO1qmTlCHpjwxU+Yu3CWsFkGyE/zlJOb19LCwXw==",
   "success": true,
   "projectFilePath": "D:\\DevPratica\\DevPratica-Projeto\\CarLocadora\\CarLocadora.Front\\CarLocadora.Front.csproj",
   "expectedPackageFiles": [
@@ -33,6 +33,8 @@
     "C:\\Users\\ba-fernandoos\\.nuget\\packages\\microsoft.dotnet.scaffolding.shared\\6.0.8\\microsoft.dotnet.scaffolding.shared.6.0.8.nupkg.sha512",
     "C:\\Users\\ba-fernandoos\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
     "C:\\Users\\ba-fernandoos\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\ba-fernandoos\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "C:\\Users\\ba-fernandoos\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\ba-fernandoos\\.nuget\\packages\\microsoft.net.stringtools\\1.0.0\\microsoft.net.stringtools.1.0.0.nupkg.sha512",
     "C:\\Users\\ba-fernandoos\\.nuget\\packages\\microsoft.netcore.platforms\\2.1.2\\microsoft.netcore.platforms.2.1.2.nupkg.sha512",
     "C:\\Users\\ba-fernandoos\\.nuget\\packages\\microsoft.netcore.targets\\1.1.3\\microsoft.netcore.targets.1.1.3.nupkg.sha512",

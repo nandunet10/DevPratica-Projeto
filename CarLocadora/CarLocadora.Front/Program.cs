@@ -1,8 +1,5 @@
-using CarLocadora.Front.Models;
-using CarLocadora.Front.Servico;
-using CarLocadora.Servico;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
+using CarLocadora.Comum.Modelo;
+using CarLocadora.Comum.Servico;
 
 var builder = WebApplication.CreateBuilder(args);
 

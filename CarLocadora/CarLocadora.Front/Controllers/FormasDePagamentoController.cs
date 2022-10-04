@@ -1,5 +1,5 @@
-﻿using CarLocadora.Front.Models;
-using CarLocadora.Front.Servico;
+﻿using CarLocadora.Comum.Modelo;
+using CarLocadora.Comum.Servico;
 using CarLocadora.Modelo.Modelos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
@@ -37,11 +37,11 @@ namespace CarLocadora.Front.Controllers
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", await _apiToken.Obter());
             HttpResponseMessage response = _httpClient.GetAsync($"{_dadosBase.Value.API_URL_BASE}FormasDePagamento").Result;
 
-            if (response.IsSuccessStatusCode)            
-                return View(JsonConvert.DeserializeObject<List<FormasDePagamentoModel>>(response.Content.ReadAsStringAsync().Result));            
-            else            
+            if (response.IsSuccessStatusCode)
+                return View(JsonConvert.DeserializeObject<List<FormasDePagamentoModel>>(response.Content.ReadAsStringAsync().Result));
+            else
                 throw new Exception("Não foi possível carregar as informações!");
-            
+
         }
 
         // GET: FormasDePagamentoController/Details/5

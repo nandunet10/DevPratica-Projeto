@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarLocadora.Negocio", "CarL
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarLocadora.Front", "CarLocadora.Front\CarLocadora.Front.csproj", "{C55C71D4-BB5D-4503-8CC0-5C431BF03034}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarLocadora.EnviarEmail", "CarLocadora.EnviarEmail\CarLocadora.EnviarEmail.csproj", "{2B293C02-8272-4165-B1D0-94D5CFDC14E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarLocadora.EnviarEmail", "CarLocadora.EnviarEmail\CarLocadora.EnviarEmail.csproj", "{2B293C02-8272-4165-B1D0-94D5CFDC14E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarLocadora.Comum", "CarLocadora.Comum\CarLocadora.Comum.csproj", "{389D8ABD-51FF-40F6-A634-46CCC55C1A48}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{2B293C02-8272-4165-B1D0-94D5CFDC14E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B293C02-8272-4165-B1D0-94D5CFDC14E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B293C02-8272-4165-B1D0-94D5CFDC14E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{389D8ABD-51FF-40F6-A634-46CCC55C1A48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{389D8ABD-51FF-40F6-A634-46CCC55C1A48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{389D8ABD-51FF-40F6-A634-46CCC55C1A48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{389D8ABD-51FF-40F6-A634-46CCC55C1A48}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

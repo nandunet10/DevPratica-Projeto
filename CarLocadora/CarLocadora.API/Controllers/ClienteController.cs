@@ -7,7 +7,7 @@ namespace CarLocadora.API.Controller
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize]
+    [Authorize]
 
     public class ClienteController : ControllerBase
     {

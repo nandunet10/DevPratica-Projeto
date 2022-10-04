@@ -1,5 +1,5 @@
-﻿using CarLocadora.Front.Models;
-using CarLocadora.Front.Servico;
+﻿using CarLocadora.Comum.Modelo;
+using CarLocadora.Comum.Servico;
 using CarLocadora.Modelo.Modelos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
@@ -37,11 +37,11 @@ namespace CarLocadora.Front.Controllers
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", await _apiToken.Obter());
             HttpResponseMessage response = await _httpClient.GetAsync($"{_dadosBase.Value.API_URL_BASE}Cliente");
 
-            if (response.IsSuccessStatusCode)            
-                return View(JsonConvert.DeserializeObject<List<ClienteModel>>(await response.Content.ReadAsStringAsync()));            
-            else            
+            if (response.IsSuccessStatusCode)
+                return View(JsonConvert.DeserializeObject<List<ClienteModel>>(await response.Content.ReadAsStringAsync()));
+            else
                 throw new Exception("Não foi possível carregar as informações!");
-            
+
         }
 
         // GET: ClienteController/Create
@@ -63,10 +63,10 @@ namespace CarLocadora.Front.Controllers
 
                     HttpResponseMessage response = await _httpClient.PostAsJsonAsync($"{_dadosBase.Value.API_URL_BASE}Cliente", model);
 
-                    if (response.IsSuccessStatusCode)                    
-                        return RedirectToAction(nameof(Index), new { mensagem = "Registro criado!", sucesso = true });                    
-                    else                    
-                        throw new Exception("Não foi possível carregar as informações!");                 
+                    if (response.IsSuccessStatusCode)
+                        return RedirectToAction(nameof(Index), new { mensagem = "Registro criado!", sucesso = true });
+                    else
+                        throw new Exception("Não foi possível carregar as informações!");
                 }
                 else
                 {
@@ -83,15 +83,15 @@ namespace CarLocadora.Front.Controllers
         }
 
         // GET: ClienteController/Edit/5
-        public  async Task<IActionResult> Edit(string CPF)
+        public async Task<IActionResult> Edit(string CPF)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", await _apiToken.Obter());
             HttpResponseMessage response = _httpClient.GetAsync($"{_dadosBase.Value.API_URL_BASE}Cliente/ObterDados?CPF={CPF}").Result;
 
-            if (response.IsSuccessStatusCode)            
-                return View(JsonConvert.DeserializeObject<ClienteModel>(await response.Content.ReadAsStringAsync()));            
-            else            
-                throw new Exception("Não foi possível carregar as informações!");           
+            if (response.IsSuccessStatusCode)
+                return View(JsonConvert.DeserializeObject<ClienteModel>(await response.Content.ReadAsStringAsync()));
+            else
+                throw new Exception("Não foi possível carregar as informações!");
 
         }
 

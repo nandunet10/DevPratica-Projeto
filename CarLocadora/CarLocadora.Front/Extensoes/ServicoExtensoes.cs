@@ -1,6 +1,5 @@
-﻿using CarLocadora.Front.Servico;
+﻿using CarLocadora.Comum.Servico;
 using CarLocadora.Modelo.Modelos;
-using CarLocadora.Servico;
 
 namespace CarLocadora.API.Extensoes;
 
@@ -17,7 +16,7 @@ public static class ServicoExtensoes
     }
 
     public static void ConfigurarAPI(this IServiceCollection services)
-    { 
+    {
 
     }
 }

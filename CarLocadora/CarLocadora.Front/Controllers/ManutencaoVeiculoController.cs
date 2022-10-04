@@ -1,13 +1,11 @@
-﻿using CarLocadora.Front.Models;
-using CarLocadora.Front.Servico;
+﻿using CarLocadora.Comum.Modelo;
+using CarLocadora.Comum.Servico;
 using CarLocadora.Modelo.Modelos;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using System.Net.Http.Headers;
-using System.Reflection;
 
 namespace CarLocadora.Front.Controllers
 {
@@ -69,10 +67,10 @@ namespace CarLocadora.Front.Controllers
                     _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", await _apiToken.Obter());
                     HttpResponseMessage response = await _httpClient.PostAsJsonAsync($"{_dadosBase.Value.API_URL_BASE}ManutencaoVeiculo", model);
 
-                    if (response.IsSuccessStatusCode)                    
-                        return RedirectToAction(nameof(Index), new { mensagem = "Registro criado!", sucesso = true });                    
-                    else                    
-                        throw new Exception("Não foi possível carregar as informações!");                    
+                    if (response.IsSuccessStatusCode)
+                        return RedirectToAction(nameof(Index), new { mensagem = "Registro criado!", sucesso = true });
+                    else
+                        throw new Exception("Não foi possível carregar as informações!");
                 }
                 else
                 {

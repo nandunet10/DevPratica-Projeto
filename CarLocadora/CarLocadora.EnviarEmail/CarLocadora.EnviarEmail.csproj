@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CarLocadora.Front\CarLocadora.Front.csproj" />
     <ProjectReference Include="..\CarLocadora.Modelo\CarLocadora.Modelo.csproj" />
   </ItemGroup>
 </Project>
