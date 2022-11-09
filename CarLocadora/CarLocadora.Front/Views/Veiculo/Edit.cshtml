@@ -1,17 +1,21 @@
 ﻿@model CarLocadora.Modelo.Modelos.VeiculoModel
 
 @{
-    ViewData["Title"] = "Editar dados do Veiculo";
+    ViewData["Title"] = "Edit";
 }
 
 <h4>Editar veiculo</h4>
 <hr class="bg-white" />
 
-<form asp-action="Edit">
-    <input asp-for="DataInclusao" type="hidden" />
-    <input asp-for="DataAlteracao" type="hidden" />
-    <partial name="_Formulario" />
-</form>
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Edit">
+            <input asp-for="DataInclusao" type="hidden" />
+            <input asp-for="DataAlteracao" type="hidden" />
+            <partial name="_Formulario" />
+        </form>
+    </div>
+</div>
 
 @section Scripts {
     @{

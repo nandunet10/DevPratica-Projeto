@@ -13,10 +13,12 @@
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
     <PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="RabbitMQ.Client" Version="6.4.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\CarLocadora.Front\CarLocadora.Front.csproj" />
     <ProjectReference Include="..\CarLocadora.Modelo\CarLocadora.Modelo.csproj" />
+    <ProjectReference Include="..\CarLocadora.Negocio\CarLocadora.Negocio.csproj" />
   </ItemGroup>
 </Project>

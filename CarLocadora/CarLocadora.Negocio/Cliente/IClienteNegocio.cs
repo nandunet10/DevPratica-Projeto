@@ -7,6 +7,7 @@ namespace CarLocadora.Negocio.Cliente
         Task<List<ClienteModel>> ObterLista();
         Task<List<ClienteModel>> ObterListaEnviarEmail();
         Task Alterar(ClienteModel model);
+        Task AlterarEnvioDeEmail(string cpf);
         Task Inserir(ClienteModel model);
         Task<ClienteModel> ObterAsync(string cpf);
     }

@@ -1,15 +1,12 @@
 using AspNetCoreRateLimit;
 using CarLocadora.API.Extensoes;
-using CarLocadora.Infra.Entity;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
-string connection = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<Context>(options => options.UseSqlServer(connection));
+//string connection = builder.Configuration.GetConnectionString("DefaultConnection");
+//builder.Services.AddDbContext<Context>(options => options.UseSqlServer(connection));
 
-builder.Services.ConfigurarServicos();
+builder.Services.ConfigurarServicos(builder.Configuration);
 builder.Services.ConfigurarJWT();
 builder.Services.ConfigurarSwagger();
 

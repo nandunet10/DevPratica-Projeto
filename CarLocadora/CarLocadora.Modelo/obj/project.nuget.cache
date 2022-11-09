@@ -1,10 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "3nzXVdfZZZ5OuMjXj3lW2ng6VR3TpYTMc+KgsuWLnANpXyvUtbw1xlTPp57gou23JNRxpgn7OOeSLqfQgwC64A==",
+  "dgSpecHash": "+K5dZVKNF8MFhw59yjQrBcoyNWT+Zb/keFTAQdbA0vtg8cc5TTLsecER5W9CmMiJoA8PRhgNSVinzsJn3Ddycw==",
   "success": true,
   "projectFilePath": "D:\\DevPratica\\DevPratica-Projeto\\CarLocadora\\CarLocadora.Modelo\\CarLocadora.Modelo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ba-fernandoos\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://cdtfs01.susepbr.local/tfs/SUSEP/_packaging/Feed_susep/nuget/v3/index.json'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    }
+  ]
 }

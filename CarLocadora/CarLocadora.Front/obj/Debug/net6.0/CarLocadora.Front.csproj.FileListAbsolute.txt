@@ -241,3 +241,8 @@ D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.Front\obj\Debug\net6.0\
 D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.Front\obj\Debug\net6.0\CarLocadora.Front.pdb
 D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.Front\obj\Debug\net6.0\CarLocadora.Front.genruntimeconfig.cache
 D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.Front\obj\Debug\net6.0\ref\CarLocadora.Front.dll
+D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.Front\obj\Debug\net6.0\staticwebassets\msbuild.CarLocadora.Front.Microsoft.AspNetCore.StaticWebAssets.props
+D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.Front\obj\Debug\net6.0\staticwebassets\msbuild.build.CarLocadora.Front.props
+D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.Front\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.CarLocadora.Front.props
+D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.Front\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.CarLocadora.Front.props
+D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.Front\obj\Debug\net6.0\staticwebassets.pack.json

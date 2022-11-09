@@ -1,9 +1,11 @@
 D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.Negocio\bin\Debug\net6.0\CarLocadora.Negocio.deps.json
 D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.Negocio\bin\Debug\net6.0\CarLocadora.Negocio.dll
 D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.Negocio\bin\Debug\net6.0\CarLocadora.Negocio.pdb
+D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.Negocio\bin\Debug\net6.0\CarLocadora.Comum.dll
 D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.Negocio\bin\Debug\net6.0\CarLocadora.Infra.dll
 D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.Negocio\bin\Debug\net6.0\CarLocadora.Modelo.dll
 D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.Negocio\bin\Debug\net6.0\CarLocadora.Infra.pdb
+D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.Negocio\bin\Debug\net6.0\CarLocadora.Comum.pdb
 D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.Negocio\bin\Debug\net6.0\CarLocadora.Modelo.pdb
 D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.Negocio\obj\Debug\net6.0\CarLocadora.Negocio.csproj.AssemblyReference.cache
 D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.Negocio\obj\Debug\net6.0\CarLocadora.Negocio.GeneratedMSBuildEditorConfig.editorconfig

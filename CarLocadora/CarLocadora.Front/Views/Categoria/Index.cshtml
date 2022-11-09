@@ -70,9 +70,8 @@
 
 
                     @Html.ActionLink("Editar", "Edit", new {  id=item.Id  }, new {@class = "btn btn-warning"}) |
-                    <button class="btn-danger">
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                       data-bs-id="@item.Id" data-bs-nome="@item.Descricao">Excluir</a>
+                    <button type="button" class="btn-danger">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-id="@item.Id" data-bs-nome="@item.Descricao">Excluir</a>
                     </button>
                 </td>
             </tr>
@@ -80,7 +79,7 @@
     </tbody>
 </table>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -93,7 +92,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                @Html.ActionLink("Excluir","Delete", null, htmlAttributes: new {@class = "btn btn-primary"})
+                @Html.ActionLink("Excluir","Delete",  null, new {@class = "btn btn-primary"})
 
             </div>
         </div>

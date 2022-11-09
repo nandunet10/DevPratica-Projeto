@@ -1,13 +1,18 @@
 ﻿using AspNetCoreRateLimit;
+using CarLocadora.Comum.Modelo;
+using CarLocadora.Infra.Entity;
+using CarLocadora.Infra.RabbitMQ;
 using CarLocadora.Negocio.Categoria;
 using CarLocadora.Negocio.Cliente;
 using CarLocadora.Negocio.FormasDePagamento;
 using CarLocadora.Negocio.Locacoes;
 using CarLocadora.Negocio.ManutencaoVeiculo;
+using CarLocadora.Negocio.RabbitMQ;
 using CarLocadora.Negocio.Usuario;
 using CarLocadora.Negocio.Veiculo;
 using CarLocadora.Negocio.Vistorias;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Security.Cryptography;
@@ -110,11 +115,11 @@ public static class ServicoExtensoes
         services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
     }
 
-    public static void ConfigurarServicos(this IServiceCollection services)
+    public static void ConfigurarServicos(this IServiceCollection services, IConfiguration configuration)
     {
         //string connection = Configuration.("DefaultConnection");
         //string connection = "Data Source=localhost,1433;Initial Catalog=DBCarLocadora;User ID=sa;Password=senha@1234;";
-        //services.AddDbContext<Context>(options => options.UseSqlServer(connection));
+        services.AddDbContext<Context>(opt => opt.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
         //Adicionar Scoped
         services.AddScoped<IClienteNegocio, ClienteNegocio>();
@@ -125,6 +130,11 @@ public static class ServicoExtensoes
         services.AddScoped<IManutencaoVeiculoNegocio, ManutencaoVeiculoNegocio>();
         services.AddScoped<ILocacoesNegocio, LocacoesNegocio>();
         services.AddScoped<IVistoriasNegocio, VistoriasNegocio>();
+        services.AddScoped<IMensageriaNegocio, MensageriaNegocio>();
+
+        services.Configure<DadosBaseRabbitMQ>(configuration.GetSection("DadosBaseRabbitMQ"));
+        services.AddSingleton<RabbitMQFactory>();
+        
 
     }
 }

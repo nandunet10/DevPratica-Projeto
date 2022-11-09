@@ -28,8 +28,8 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://tfs.susepbr.local:8080/tfs/SUSEP/_packaging/Feed_Susep/nuget/v3/index.json": {}
+          "http://cdtfs01.susepbr.local/tfs/SUSEP/_packaging/Feed_susep/nuget/v3/index.json": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
@@ -76,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -104,8 +104,8 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://tfs.susepbr.local:8080/tfs/SUSEP/_packaging/Feed_Susep/nuget/v3/index.json": {}
+          "http://cdtfs01.susepbr.local/tfs/SUSEP/_packaging/Feed_susep/nuget/v3/index.json": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
@@ -116,6 +116,9 @@
               },
               "D:\\DevPratica\\DevPratica-Projeto\\CarLocadora\\CarLocadora.Modelo\\CarLocadora.Modelo.csproj": {
                 "projectPath": "D:\\DevPratica\\DevPratica-Projeto\\CarLocadora\\CarLocadora.Modelo\\CarLocadora.Modelo.csproj"
+              },
+              "D:\\DevPratica\\DevPratica-Projeto\\CarLocadora\\CarLocadora.Negocio\\CarLocadora.Negocio.csproj": {
+                "projectPath": "D:\\DevPratica\\DevPratica-Projeto\\CarLocadora\\CarLocadora.Negocio\\CarLocadora.Negocio.csproj"
               }
             }
           }
@@ -149,6 +152,10 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.1, )"
+            },
+            "RabbitMQ.Client": {
+              "target": "Package",
+              "version": "[6.4.0, )"
             }
           },
           "imports": [
@@ -167,7 +174,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -195,8 +202,8 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://tfs.susepbr.local:8080/tfs/SUSEP/_packaging/Feed_Susep/nuget/v3/index.json": {}
+          "http://cdtfs01.susepbr.local/tfs/SUSEP/_packaging/Feed_susep/nuget/v3/index.json": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
@@ -221,6 +228,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.17.0, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[6.0.8, )"
@@ -249,7 +260,102 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\DevPratica\\DevPratica-Projeto\\CarLocadora\\CarLocadora.Infra\\CarLocadora.Infra.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\DevPratica\\DevPratica-Projeto\\CarLocadora\\CarLocadora.Infra\\CarLocadora.Infra.csproj",
+        "projectName": "CarLocadora.Infra",
+        "projectPath": "D:\\DevPratica\\DevPratica-Projeto\\CarLocadora\\CarLocadora.Infra\\CarLocadora.Infra.csproj",
+        "packagesPath": "C:\\Users\\ba-fernandoos\\.nuget\\packages\\",
+        "outputPath": "D:\\DevPratica\\DevPratica-Projeto\\CarLocadora\\CarLocadora.Infra\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ba-fernandoos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "http://cdtfs01.susepbr.local/tfs/SUSEP/_packaging/Feed_susep/nuget/v3/index.json": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\DevPratica\\DevPratica-Projeto\\CarLocadora\\CarLocadora.Comum\\CarLocadora.Comum.csproj": {
+                "projectPath": "D:\\DevPratica\\DevPratica-Projeto\\CarLocadora\\CarLocadora.Comum\\CarLocadora.Comum.csproj"
+              },
+              "D:\\DevPratica\\DevPratica-Projeto\\CarLocadora\\CarLocadora.Modelo\\CarLocadora.Modelo.csproj": {
+                "projectPath": "D:\\DevPratica\\DevPratica-Projeto\\CarLocadora\\CarLocadora.Modelo\\CarLocadora.Modelo.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
+            "RabbitMQ.Client": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -277,8 +383,8 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://tfs.susepbr.local:8080/tfs/SUSEP/_packaging/Feed_Susep/nuget/v3/index.json": {}
+          "http://cdtfs01.susepbr.local/tfs/SUSEP/_packaging/Feed_susep/nuget/v3/index.json": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
@@ -317,7 +423,83 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\DevPratica\\DevPratica-Projeto\\CarLocadora\\CarLocadora.Negocio\\CarLocadora.Negocio.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\DevPratica\\DevPratica-Projeto\\CarLocadora\\CarLocadora.Negocio\\CarLocadora.Negocio.csproj",
+        "projectName": "CarLocadora.Negocio",
+        "projectPath": "D:\\DevPratica\\DevPratica-Projeto\\CarLocadora\\CarLocadora.Negocio\\CarLocadora.Negocio.csproj",
+        "packagesPath": "C:\\Users\\ba-fernandoos\\.nuget\\packages\\",
+        "outputPath": "D:\\DevPratica\\DevPratica-Projeto\\CarLocadora\\CarLocadora.Negocio\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ba-fernandoos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "http://cdtfs01.susepbr.local/tfs/SUSEP/_packaging/Feed_susep/nuget/v3/index.json": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\DevPratica\\DevPratica-Projeto\\CarLocadora\\CarLocadora.Infra\\CarLocadora.Infra.csproj": {
+                "projectPath": "D:\\DevPratica\\DevPratica-Projeto\\CarLocadora\\CarLocadora.Infra\\CarLocadora.Infra.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "RabbitMQ.Client": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

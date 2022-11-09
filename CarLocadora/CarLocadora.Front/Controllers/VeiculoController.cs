@@ -55,7 +55,7 @@ namespace CarLocadora.Front.Controllers
         // GET: VeiculoController/Create
         public async Task<IActionResult> Create()
         {
-            ViewBag.CategoriasDeVeiculos = CarregarCategoriasDeVeiculos();
+            ViewBag.CategoriasDeVeiculos = await CarregarCategoriasDeVeiculos();
 
             return View();
         }
@@ -98,7 +98,7 @@ namespace CarLocadora.Front.Controllers
 
             if (response.IsSuccessStatusCode)
             {
-                ViewBag.CategoriasDeVeiculos = CarregarCategoriasDeVeiculos();
+                ViewBag.CategoriasDeVeiculos = await CarregarCategoriasDeVeiculos();
                 return View(JsonConvert.DeserializeObject<VeiculoModel>(await response.Content.ReadAsStringAsync()));
             }
             else
@@ -138,7 +138,7 @@ namespace CarLocadora.Front.Controllers
         }
 
         // GET: VeiculoController/Delete/5
-        public async Task<IActionResult> Delete(int id)
+        public IActionResult Delete(int id)
         {
             return View();
         }
@@ -146,7 +146,7 @@ namespace CarLocadora.Front.Controllers
         // POST: VeiculoController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Delete(int id, IFormCollection collection)
+        public IActionResult Delete(int id, IFormCollection collection)
         {
             try
             {
