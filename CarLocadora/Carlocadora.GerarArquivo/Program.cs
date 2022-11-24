@@ -1,5 +1,5 @@
 using Carlocadora.GerarArquivo;
-using CarLocadora.Comum.Modelo;
+using CarLocadora.Comum.Modelos;
 using CarLocadora.Infra.RabbitMQ;
 
 IHost host = Host.CreateDefaultBuilder(args)

@@ -2,7 +2,6 @@ using CarLocadora.Infra.RabbitMQ;
 using CarLocadora.Modelo.Modelos;
 using Newtonsoft.Json;
 using RabbitMQ.Client;
-using System.Reflection;
 using System.Text;
 
 namespace Carlocadora.GerarArquivo

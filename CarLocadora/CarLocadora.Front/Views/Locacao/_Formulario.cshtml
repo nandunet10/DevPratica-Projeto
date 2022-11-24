@@ -1,39 +1,37 @@
 ﻿@model CarLocadora.Modelo.Modelos.LocacoesModel
 
 
-<hr />
-
 <div class="row">
 
-    <div class="col-sm-12">
+    <div class="col-sm-4">
         <div class="form-group">
-            <label asp-for="ClienteCPF" class="control-label"></label>
-            <select asp-for="ClienteCPF" asp-items="ViewBag.Clientes" class="form-control text-uppercase" />
+            <label asp-for="ClienteCPF" class="control-label">CPF do cliente</label>
+            <select asp-for="ClienteCPF" asp-items="ViewBag.ClientesLocacao" class="form-control text-uppercase"></select>
             <span asp-validation-for="ClienteCPF" class="text-danger"></span>
         </div>
     </div>
 
-    <div class="col-sm-12">
+    <div class="col-sm-4">
         <div class="form-group">
-            <label asp-for="VeiculoPlaca" class="control-label"></label>
-            <select asp-for="VeiculoPlaca" asp-items="ViewBag.Veiculos" class="form-control text-uppercase" />
+            <label asp-for="VeiculoPlaca" class="control-label">Placa do veículo</label>
+            <select asp-for="VeiculoPlaca" asp-items="ViewBag.VeiculosLocacao" class="form-control text-uppercase"></select>
 
             <span asp-validation-for="VeiculoPlaca" class="text-danger"></span>
         </div>
     </div>
 
-    <div class="col-sm-12">
+    <div class="col-sm-4">
         <div class="form-group">
-            <label asp-for="FormasDePagamento" class="control-label"></label>
-            <select asp-for="FormasDePagamento" asp-items="ViewBag.FormasDePagamento" class="form-control text-uppercase" />
-            <span asp-validation-for="FormasDePagamento" class="text-danger"></span>
+            <label asp-for="FormasDePagamentoId" class="control-label">Forma de pagamento</label>
+            <select asp-for="FormasDePagamentoId" asp-items="ViewBag.FormasDePagamentoLocacao" class="form-control text-uppercase"></select>
+            <span asp-validation-for="FormasDePagamentoId" class="text-danger"></span>
         </div>
     </div>
 </div>
 
 <div class="row">
 
-    <div class="col-md-12">
+    <div class="col-md-4">
         <div class="form-group">
             <label asp-for="DataHoraReserva" class="control-label"></label>
             <input asp-for="DataHoraReserva" class="form-control" />
@@ -41,7 +39,7 @@
         </div>
     </div>
 
-    <div class="col-md-12">
+    <div class="col-md-4">
         <div class="form-group">
             <label asp-for="DataHoraRetiradaPrevista" class="control-label"></label>
             <input asp-for="DataHoraRetiradaPrevista" class="form-control" />
@@ -50,7 +48,7 @@
         </div>
     </div>
 
-    <div class="col-md-12">
+    <div class="col-md-4">
         <div class="form-group">
             <label asp-for="DataHoraDevolucaoPrevista" class="control-label"></label>
             <input asp-for="DataHoraDevolucaoPrevista" class="form-control" />
@@ -59,6 +57,35 @@
     </div>
 
 </div>
+
+@*<div class="row">
+
+    <div class="col-md-4">
+        <div class="form-group">
+            <label asp-for="SeguroApolice" class="control-label"></label>
+            <input asp-for="SeguroApolice" class="form-control" disabled />
+            <span asp-validation-for="SeguroApolice" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="form-group">
+            <label asp-for="SeguroAprovado" class="control-label"></label>
+            <input asp-for="SeguroAprovado" class="form-control" disabled />
+            <span asp-validation-for="SeguroAprovado" class="text-danger"></span>
+
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="form-group">
+            <label asp-for="SeguroObservacao" class="control-label"></label>
+            <input asp-for="SeguroObservacao" class="form-control" disabled />
+            <span asp-validation-for="SeguroObservacao" class="text-danger"></span>
+        </div>
+    </div>
+
+</div>*@
 
 <hr />
 <div class="row">

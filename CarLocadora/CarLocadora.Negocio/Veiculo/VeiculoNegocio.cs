@@ -22,8 +22,6 @@ namespace CarLocadora.Negocio.Veiculo
             model.DataAlteracao = DateTime.Now;
             _context.Update(model);
             await _context.SaveChangesAsync();
-
-            _rabbitMQNegocio.PublicarMensagem(model, "", "cadastrarVeiculo");
         }
 
         public async Task Inserir(VeiculoModel model)
@@ -33,7 +31,6 @@ namespace CarLocadora.Negocio.Veiculo
             await _context.SaveChangesAsync();
 
             _rabbitMQNegocio.PublicarMensagem(model, "", "cadastrarVeiculo");
-
         }
 
         public async Task<VeiculoModel> Obter(string placa) => await _context.Veiculos.SingleOrDefaultAsync(x => x.Placa.Equals(placa));    

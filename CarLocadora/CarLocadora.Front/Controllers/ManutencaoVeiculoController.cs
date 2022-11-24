@@ -1,4 +1,4 @@
-﻿using CarLocadora.Comum.Modelo;
+﻿using CarLocadora.Comum.Modelos;
 using CarLocadora.Comum.Servico;
 using CarLocadora.Modelo.Modelos;
 using Microsoft.AspNetCore.Mvc;
@@ -12,10 +12,10 @@ namespace CarLocadora.Front.Controllers
     public class ManutencaoVeiculoController : Controller
     {
         private readonly IOptions<DadosBase> _dadosBase;
-        private readonly IOptions<LoginRespostaModel> _loginRespostaModel;
+        private readonly IOptions<LoginResposta> _loginRespostaModel;
         private readonly HttpClient _httpClient;
         private readonly IApiToken _apiToken;
-        public ManutencaoVeiculoController(IOptions<DadosBase> dadosBase, IApiToken apiToken, IOptions<LoginRespostaModel> loginRespostaModel, IHttpClientFactory httpClient)
+        public ManutencaoVeiculoController(IOptions<DadosBase> dadosBase, IApiToken apiToken, IOptions<LoginResposta> loginRespostaModel, IHttpClientFactory httpClient)
         {
             _dadosBase = dadosBase;
             _apiToken = apiToken;

@@ -1,9 +1,5 @@
-﻿using CarLocadora.Modelo.Modelos;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CarLocadora.Comum.Modelos;
+using CarLocadora.Modelo.Modelos;
 
 namespace CarLocadora.Negocio.Locacoes
 {
@@ -12,6 +8,7 @@ namespace CarLocadora.Negocio.Locacoes
         Task<List<LocacoesModel>> ObterLista();
         Task Inserir(LocacoesModel model);
         Task Alterar(LocacoesModel model);
+        Task AlterarDadosSeguro(LocacoesSeguro model);
         Task<LocacoesModel> Obter(int id);
     }
 }

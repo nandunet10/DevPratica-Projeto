@@ -1,13 +1,12 @@
-﻿
-using CarLocadora.Modelo.Modelos;
+﻿using CarLocadora.Comum.Modelos;
 
 namespace CarLocadora.Negocio
 {
     public class LoginServico
     {
-        public async Task<LoginRespostaModel> Login(LoginRequisicaoModel loginRequisicaoModel)
+        public async Task<LoginResposta> Login(LoginRequisicao loginRequisicaoModel)
         {
-            LoginRespostaModel loginRespostaModel = new()
+            LoginResposta loginRespostaModel = new()
             {
                 Autenticado = false,
                 Usuario = loginRequisicaoModel.Usuario,

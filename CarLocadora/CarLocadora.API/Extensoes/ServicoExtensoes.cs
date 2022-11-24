@@ -1,5 +1,5 @@
 ﻿using AspNetCoreRateLimit;
-using CarLocadora.Comum.Modelo;
+using CarLocadora.Comum.Modelos;
 using CarLocadora.Infra.Entity;
 using CarLocadora.Infra.RabbitMQ;
 using CarLocadora.Negocio.Categoria;
@@ -134,7 +134,7 @@ public static class ServicoExtensoes
 
         services.Configure<DadosBaseRabbitMQ>(configuration.GetSection("DadosBaseRabbitMQ"));
         services.AddSingleton<RabbitMQFactory>();
-        
+
 
     }
 }

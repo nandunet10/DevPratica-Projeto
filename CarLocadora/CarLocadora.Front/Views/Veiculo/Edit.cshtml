@@ -1,10 +1,10 @@
 ﻿@model CarLocadora.Modelo.Modelos.VeiculoModel
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar";
 }
 
-<h4>Editar veiculo</h4>
+<h4>Editar veículo</h4>
 <hr class="bg-white" />
 
 <div class="row">
@@ -18,7 +18,5 @@
 </div>
 
 @section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-    }
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

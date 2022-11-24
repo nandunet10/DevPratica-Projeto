@@ -184,6 +184,16 @@ namespace CarLocadora.Infra.Migrations
                     b.Property<int>("FormasDePagamentoId")
                         .HasColumnType("int");
 
+                    b.Property<Guid?>("SeguroApolice")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool?>("SeguroAprovado")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SeguroObservacao")
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
+
                     b.Property<string>("VeiculoPlaca")
                         .IsRequired()
                         .HasMaxLength(8)

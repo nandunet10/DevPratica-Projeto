@@ -17,7 +17,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarLocadora.EnviarEmail", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarLocadora.Comum", "CarLocadora.Comum\CarLocadora.Comum.csproj", "{389D8ABD-51FF-40F6-A634-46CCC55C1A48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carlocadora.GerarArquivo", "Carlocadora.GerarArquivo\Carlocadora.GerarArquivo.csproj", "{D7E9C5A6-6830-478C-B4D4-14C46096126D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carlocadora.GerarArquivo", "Carlocadora.GerarArquivo\Carlocadora.GerarArquivo.csproj", "{D7E9C5A6-6830-478C-B4D4-14C46096126D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarLocadora.EnviarDadosSeguradora", "CarLocadora.EnviarDadosSeguradora\CarLocadora.EnviarDadosSeguradora.csproj", "{78C5E568-1453-4EA1-9899-88E558A2C695}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarLocadora.ObterDadosSeguradora", "CarLocadora.ObterDadosSeguradora\CarLocadora.ObterDadosSeguradora.csproj", "{F2A98C64-2F42-4156-83F0-C8E18DD38B1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarLocadora.AtualizarDadosLocacaoSeguradora", "CarLocadora.AtualizarDadosLocacaoSeguradora\CarLocadora.AtualizarDadosLocacaoSeguradora.csproj", "{7306586D-85A6-4B8F-92CF-023AF1FAA4B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +63,18 @@ Global
 		{D7E9C5A6-6830-478C-B4D4-14C46096126D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7E9C5A6-6830-478C-B4D4-14C46096126D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7E9C5A6-6830-478C-B4D4-14C46096126D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78C5E568-1453-4EA1-9899-88E558A2C695}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78C5E568-1453-4EA1-9899-88E558A2C695}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78C5E568-1453-4EA1-9899-88E558A2C695}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78C5E568-1453-4EA1-9899-88E558A2C695}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2A98C64-2F42-4156-83F0-C8E18DD38B1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2A98C64-2F42-4156-83F0-C8E18DD38B1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2A98C64-2F42-4156-83F0-C8E18DD38B1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2A98C64-2F42-4156-83F0-C8E18DD38B1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7306586D-85A6-4B8F-92CF-023AF1FAA4B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7306586D-85A6-4B8F-92CF-023AF1FAA4B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7306586D-85A6-4B8F-92CF-023AF1FAA4B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7306586D-85A6-4B8F-92CF-023AF1FAA4B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

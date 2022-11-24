@@ -1,23 +1,59 @@
 ﻿@model CarLocadora.Modelo.Modelos.LocacoesModel
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar";
 }
 
 <h4>Editar Locação</h4>
 <hr class="bg-white" />
 
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-12">
         <form asp-action="Edit">
             <input asp-for="Id" type="hidden" />
             <input asp-for="DataInclusao" type="hidden" />
             <input asp-for="DataAlteracao" type="hidden" />
+
+            <div class="row">
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="SeguroApolice" class="control-label"></label>
+                        <input asp-for="SeguroApolice" class="form-control" disabled />
+                        <span asp-validation-for="SeguroApolice" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="SeguroAprovado" class="control-label"></label>
+                        <select asp-for="SeguroAprovado" class="form-control" disabled >
+                            <option value="" selected=""></option>
+                            <option value="true">Aprovado</option>
+                            <option value="false">Reprovado</option>
+                        </select>
+                        <span asp-validation-for="SeguroAprovado" class="text-danger"></span>
+
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="SeguroObservacao" class="control-label"></label>
+                        <input asp-for="SeguroObservacao" class="form-control" disabled />
+                        <span asp-validation-for="SeguroObservacao" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
             <partial name="_Formulario" />
+
+
         </form>
     </div>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

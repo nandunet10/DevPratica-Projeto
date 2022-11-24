@@ -1,4 +1,4 @@
-﻿using CarLocadora.Comum.Modelo;
+﻿using CarLocadora.Comum.Modelos;
 using CarLocadora.Comum.Servico;
 using CarLocadora.Modelo.Modelos;
 using Microsoft.AspNetCore.Mvc;
@@ -13,10 +13,10 @@ namespace CarLocadora.Front.Controllers
         private string mensagem = String.Empty;
 
         private readonly IOptions<DadosBase> _dadosBase;
-        private readonly IOptions<LoginRespostaModel> _loginRespostaModel;
+        private readonly IOptions<LoginResposta> _loginRespostaModel;
         private readonly IApiToken _apiToken;
         private readonly HttpClient _httpClient;
-        public VistoriaController(IOptions<DadosBase> dadosBase, IOptions<LoginRespostaModel> loginRespostaModel, IApiToken apiToken, IHttpClientFactory httpClient)
+        public VistoriaController(IOptions<DadosBase> dadosBase, IOptions<LoginResposta> loginRespostaModel, IApiToken apiToken, IHttpClientFactory httpClient)
         {
             _dadosBase = dadosBase;
             _loginRespostaModel = loginRespostaModel;

@@ -1,5 +1,5 @@
-﻿using CarLocadora.Comum.Servico;
-using CarLocadora.Modelo.Modelos;
+﻿using CarLocadora.Comum.Modelos;
+using CarLocadora.Comum.Servico;
 
 namespace CarLocadora.API.Extensoes;
 
@@ -9,7 +9,7 @@ public static class ServicoExtensoes
     {
         //Adicionar Scoped
         services.AddSingleton<IApiToken, ApiToken>();
-        services.AddSingleton<LoginRespostaModel>();
+        services.AddSingleton<LoginResposta>();
 
         services.AddHttpClient();
 

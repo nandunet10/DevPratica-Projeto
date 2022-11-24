@@ -1,4 +1,4 @@
-﻿using CarLocadora.Comum.Modelo;
+﻿using CarLocadora.Comum.Modelos;
 using CarLocadora.Comum.Servico;
 using CarLocadora.Modelo.Modelos;
 using Microsoft.AspNetCore.Mvc;
@@ -11,14 +11,14 @@ namespace CarLocadora.Front.Controllers
 {
     public class LocacaoController : Controller
     {
-        private readonly string mensagem = String.Empty;
+        private readonly string mensagem = string.Empty;
 
         private readonly IOptions<DadosBase> _dadosBase;
-        private readonly IOptions<LoginRespostaModel> _loginRespostaModel;
+        private readonly IOptions<LoginResposta> _loginRespostaModel;
         private readonly HttpClient _httpClient;
         private readonly IApiToken _apiToken;
 
-        public LocacaoController(IOptions<DadosBase> dadosBase, IOptions<LoginRespostaModel> loginRespostaModel, IApiToken apiToken, IHttpClientFactory httpClient)
+        public LocacaoController(IOptions<DadosBase> dadosBase, IOptions<LoginResposta> loginRespostaModel, IApiToken apiToken, IHttpClientFactory httpClient)
         {
             _dadosBase = dadosBase;
             _loginRespostaModel = loginRespostaModel;
@@ -37,16 +37,16 @@ namespace CarLocadora.Front.Controllers
                 TempData["erro"] = mensagem;
 
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", await _apiToken.Obter());
-            HttpResponseMessage response = _httpClient.GetAsync($"{_dadosBase.Value.API_URL_BASE}Locacao").Result;
+            HttpResponseMessage response = await _httpClient.GetAsync($"{_dadosBase.Value.API_URL_BASE}Locacao");
 
             if (response.IsSuccessStatusCode)
-                return View(JsonConvert.DeserializeObject<List<LocacoesModel>>(response.Content.ReadAsStringAsync().Result));
+                return View(JsonConvert.DeserializeObject<List<LocacoesModel>>(await response.Content.ReadAsStringAsync()));
             else
                 throw new Exception("Não foi possível carregar as informações!");
         }
 
         // GET: LocacoesController/Details/5
-        public async Task<IActionResult> Details(int id)
+        public IActionResult Details(int id)
         {
             return View();
         }
@@ -54,6 +54,10 @@ namespace CarLocadora.Front.Controllers
         // GET: LocacoesController/Create
         public async Task<IActionResult> Create()
         {
+            ViewBag.VeiculosLocacao = await CarregarVeiculos();
+            ViewBag.ClientesLocacao = await CarregarClientes();
+            ViewBag.FormasDePagamentoLocacao = await CarregarFormasDePagamento();
+
             return View();
         }
 
@@ -64,12 +68,21 @@ namespace CarLocadora.Front.Controllers
         {
             try
             {
-                ViewBag.Veiculos = CarregarVeiculos().Result;
-                ViewBag.Clientes = CarregarClientes().Result;
-                ViewBag.FormasDePagamento = CarregarFormasDePagamento().Result;
+                if (ModelState.IsValid)
+                {
+                    _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", await _apiToken.Obter());
+                    HttpResponseMessage response = await _httpClient.PostAsJsonAsync($"{_dadosBase.Value.API_URL_BASE}locacao", model);
 
-                return View();
-
+                    if (response.IsSuccessStatusCode)
+                        return RedirectToAction(nameof(Index), new { mensagem = "Registro criado!", sucesso = true });
+                    else
+                        throw new Exception("Não foi possível carregar as informações!");
+                }
+                else
+                {
+                    TempData["erro"] = "Algum campo deve estar faltando o seu preenchimento!";
+                    return View();
+                }
             }
             catch (Exception ex)
             {
@@ -82,12 +95,22 @@ namespace CarLocadora.Front.Controllers
         public async Task<IActionResult> Edit(int id)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", await _apiToken.Obter());
-            HttpResponseMessage response = await _httpClient.GetAsync($"{_dadosBase.Value.API_URL_BASE}Locacao/ObterDados?Id={id}");
+            HttpResponseMessage response = _httpClient.GetAsync($"{_dadosBase.Value.API_URL_BASE}Locacao/ObterDados?Id={id}").Result;
 
             if (response.IsSuccessStatusCode)
-                return View(JsonConvert.DeserializeObject<LocacoesModel>(await response.Content.ReadAsStringAsync()));
+            {
+                ViewBag.VeiculosLocacao = await CarregarVeiculos();
+                ViewBag.ClientesLocacao = await CarregarClientes();
+                ViewBag.FormasDePagamentoLocacao = await CarregarFormasDePagamento();
+
+                var conteudo = await response.Content.ReadAsStringAsync();
+
+                return View(JsonConvert.DeserializeObject<LocacoesModel>(conteudo));
+            }
             else
+            {
                 throw new Exception("Não foi possível carregar as informações!");
+            }
         }
 
         // POST: LocacoesController/Edit/5

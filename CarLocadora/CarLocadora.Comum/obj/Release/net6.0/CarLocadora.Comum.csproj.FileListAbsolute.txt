@@ -1,0 +1,15 @@
+D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.Comum\bin\Release\net6.0\CarLocadora.Comum.deps.json
+D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.Comum\bin\Release\net6.0\CarLocadora.Comum.dll
+D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.Comum\bin\Release\net6.0\CarLocadora.Comum.pdb
+D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.Comum\bin\Release\net6.0\CarLocadora.Modelo.dll
+D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.Comum\bin\Release\net6.0\CarLocadora.Modelo.pdb
+D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.Comum\obj\Release\net6.0\CarLocadora.Comum.csproj.AssemblyReference.cache
+D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.Comum\obj\Release\net6.0\CarLocadora.Comum.GeneratedMSBuildEditorConfig.editorconfig
+D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.Comum\obj\Release\net6.0\CarLocadora.Comum.AssemblyInfoInputs.cache
+D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.Comum\obj\Release\net6.0\CarLocadora.Comum.AssemblyInfo.cs
+D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.Comum\obj\Release\net6.0\CarLocadora.Comum.csproj.CoreCompileInputs.cache
+D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.Comum\obj\Release\net6.0\CarLocadora.Comum.csproj.CopyComplete
+D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.Comum\obj\Release\net6.0\CarLocadora.Comum.dll
+D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.Comum\obj\Release\net6.0\refint\CarLocadora.Comum.dll
+D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.Comum\obj\Release\net6.0\CarLocadora.Comum.pdb
+D:\DevPratica\DevPratica-Projeto\CarLocadora\CarLocadora.Comum\obj\Release\net6.0\ref\CarLocadora.Comum.dll

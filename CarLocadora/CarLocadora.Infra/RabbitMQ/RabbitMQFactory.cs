@@ -1,4 +1,4 @@
-﻿using CarLocadora.Comum.Modelo;
+﻿using CarLocadora.Comum.Modelos;
 using Microsoft.Extensions.Options;
 using RabbitMQ.Client;
 

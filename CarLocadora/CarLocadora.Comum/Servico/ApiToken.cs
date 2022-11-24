@@ -1,5 +1,4 @@
-﻿using CarLocadora.Comum.Modelo;
-using CarLocadora.Modelo.Modelos;
+﻿using CarLocadora.Comum.Modelos;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using System.Net.Http.Headers;
@@ -10,9 +9,9 @@ namespace CarLocadora.Comum.Servico
     public class ApiToken : IApiToken
     {
         private readonly IOptions<DadosBase> _dadosBase;
-        private readonly IOptions<LoginRespostaModel> _loginRespostaModel;
+        private readonly IOptions<LoginResposta> _loginRespostaModel;
 
-        public ApiToken(IOptions<DadosBase> dadosBase, IOptions<LoginRespostaModel> loginRespostaModel)
+        public ApiToken(IOptions<DadosBase> dadosBase, IOptions<LoginResposta> loginRespostaModel)
         {
             _dadosBase = dadosBase;
             _loginRespostaModel = loginRespostaModel;
@@ -24,17 +23,17 @@ namespace CarLocadora.Comum.Servico
             cliente.DefaultRequestHeaders.Accept.Clear();
             cliente.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            LoginRequisicaoModel loginRequisicaoModel = new()
-            {
-                Usuario = "UsuarioDevPratica",
-                Senha = "SenhaDevPratica"
-            };
+            //LoginRequisicaoModel loginRequisicaoModel = new()
+            //{
+            //    Usuario = "UsuarioDevPratica",
+            //    Senha = "SenhaDevPratica"
+            //};
 
-            HttpResponseMessage response = await cliente.PostAsJsonAsync($"{_dadosBase.Value.API_URL_BASE}Login", loginRequisicaoModel);
+            HttpResponseMessage response = await cliente.PostAsJsonAsync($"{_dadosBase.Value.API_URL_BASE}Login", new LoginRequisicao() { Usuario = _dadosBase.Value.USUARIO, Senha = _dadosBase.Value.SENHA });
 
             if (response.IsSuccessStatusCode)
             {
-                LoginRespostaModel loginRespostaModel = JsonConvert.DeserializeObject<LoginRespostaModel>(await response.Content.ReadAsStringAsync());
+                LoginResposta loginRespostaModel = JsonConvert.DeserializeObject<LoginResposta>(await response.Content.ReadAsStringAsync());
 
                 if (loginRespostaModel.Autenticado == true)
                 {

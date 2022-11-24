@@ -1,4 +1,4 @@
-﻿using CarLocadora.Comum.Modelo;
+﻿using CarLocadora.Comum.Modelos;
 using CarLocadora.Comum.Servico;
 using CarLocadora.Modelo.Modelos;
 using Microsoft.AspNetCore.Mvc;
@@ -11,15 +11,15 @@ namespace CarLocadora.Front.Controllers
 {
     public class VeiculoController : Controller
     {
-        private string? mensagem = string.Empty;
+        private readonly string mensagem = string.Empty;
 
         private readonly IOptions<DadosBase> _dadosBase;
-        private readonly IOptions<LoginRespostaModel> _loginRespostaModel;
+        private readonly IOptions<LoginResposta> _loginRespostaModel;
         private readonly IApiToken _apiToken;
         private readonly HttpClient _httpClient;
 
 
-        public VeiculoController(IOptions<DadosBase> dadosBase, IOptions<LoginRespostaModel> loginRespostaModel, IApiToken apiToken, IHttpClientFactory httpClient)
+        public VeiculoController(IOptions<DadosBase> dadosBase, IOptions<LoginResposta> loginRespostaModel, IApiToken apiToken, IHttpClientFactory httpClient)
         {
             _dadosBase = dadosBase;
             _loginRespostaModel = loginRespostaModel;
@@ -47,7 +47,7 @@ namespace CarLocadora.Front.Controllers
         }
 
         // GET: VeiculoController/Details/5
-        public async Task<IActionResult> Details(int id)
+        public IActionResult Details(int id)
         {
             return View();
         }

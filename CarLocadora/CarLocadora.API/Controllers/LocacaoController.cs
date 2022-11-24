@@ -1,4 +1,5 @@
-﻿using CarLocadora.Modelo.Modelos;
+﻿using CarLocadora.Comum.Modelos;
+using CarLocadora.Modelo.Modelos;
 using CarLocadora.Negocio.Locacoes;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -24,7 +25,7 @@ namespace CarLocadora.API.Controller
             return await _locacoesNegocio.ObterLista();
         }
         [HttpGet("{id}")]
-        public async Task<LocacoesModel> Get([FromRoute] int id)
+        public async Task<LocacoesModel> Get([FromQuery] int id)
         {
             return await _locacoesNegocio.Obter(id);
         }
@@ -38,6 +39,12 @@ namespace CarLocadora.API.Controller
         public async Task Put([FromBody] LocacoesModel model)
         {
             await _locacoesNegocio.Alterar(model);
+        }
+
+        [HttpPut("AtualizarDadosSeguro")]
+        public async Task PutDadosSeguro([FromBody] LocacoesSeguro model)
+        {
+            await _locacoesNegocio.AlterarDadosSeguro(model);
         }
     }
 }

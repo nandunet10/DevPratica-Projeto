@@ -1,4 +1,4 @@
-﻿using CarLocadora.Modelo.Modelos;
+﻿using CarLocadora.Comum.Modelos;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -13,7 +13,7 @@ namespace CarLocadora.Negocio
         {
             _secreto = Environment.GetEnvironmentVariable("JWT_SECRETO");
         }
-        public LoginRespostaModel GerarToken(LoginRespostaModel loginRespostaModel)
+        public LoginResposta GerarToken(LoginResposta loginRespostaModel)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
 

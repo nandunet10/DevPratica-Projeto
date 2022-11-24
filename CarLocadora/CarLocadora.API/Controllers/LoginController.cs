@@ -1,4 +1,4 @@
-﻿using CarLocadora.Modelo.Modelos;
+﻿using CarLocadora.Comum.Modelos;
 using CarLocadora.Negocio;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -12,7 +12,7 @@ namespace CarLocadora.Controllers
         [HttpPost]
         [AllowAnonymous]
 
-        public async Task<ActionResult<LoginRespostaModel>> Login([FromBody] LoginRequisicaoModel loginRequisicaoModel)
+        public async Task<ActionResult<LoginResposta>> Login([FromBody] LoginRequisicao loginRequisicaoModel)
         {
             return Ok(await new LoginServico().Login(loginRequisicaoModel));
         }
