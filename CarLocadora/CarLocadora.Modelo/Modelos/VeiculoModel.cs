@@ -5,11 +5,11 @@ namespace CarLocadora.Modelo.Modelos
 {
     public class VeiculoModel
     {
-        [Key][Required(ErrorMessage = "Campo obrigatório!")][StringLength(8, ErrorMessage = "Maxímo de 8 caracteres.")][DatabaseGenerated(DatabaseGeneratedOption.Identity)] public string Placa { get; set; }
+        [Key][Required(ErrorMessage = "Campo obrigatório!")][StringLength(8, MinimumLength = 7, ErrorMessage = "Maxímo de 8 e minimo de 7 caracteres.")][DatabaseGenerated(DatabaseGeneratedOption.Identity)] public string Placa { get; set; }
         [StringLength(100, ErrorMessage = "Maxímo de 100 caracteres.")] public string? Chassi { get; set; }
-        [Required(ErrorMessage = "Campo obrigatório!")][StringLength(100, ErrorMessage = "Máximo de 100 caracteres.")] public string Marca { get; set; }
-        [Required(ErrorMessage = "Campo obrigatório!")][StringLength(150, ErrorMessage = "Maxímo de 150 caracteres.")] public string Modelo { get; set; }
-        [Required(ErrorMessage = "Campo obrigatório!")][StringLength(100, ErrorMessage = "Maxímo de 100 caracteres.")] public string Combustivel { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório!")][StringLength(100, MinimumLength = 4, ErrorMessage = "Máximo de 100 e minimo de 4 caracteres.")] public string Marca { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório!")][StringLength(150, MinimumLength = 4, ErrorMessage = "Maxímo de 150 e minimo de 4 caracteres.")] public string Modelo { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório!")][StringLength(100, MinimumLength = 3, ErrorMessage = "Maxímo de 100 e minimo de 3 caracteres.")] public string Combustivel { get; set; }
         [Required(ErrorMessage = "Campo obrigatório!")][StringLength(100, ErrorMessage = "Maxímo de 100 caracteres.")] public string Cor { get; set; }
         [StringLength(2000, ErrorMessage = "Maxímo de 2000 caracteres")] public string? Opcionais { get; set; }
         [Required(ErrorMessage = "Campo obrigatório!")] public bool Ativo { get; set; }
