@@ -145,7 +145,7 @@ namespace CarLocadora.Front.Controllers
         }
 
         // GET: LocacoesController/Delete/5
-        public async Task<IActionResult> Delete(int id)
+        public IActionResult Delete(int id)
         {
             return View();
         }
@@ -153,7 +153,7 @@ namespace CarLocadora.Front.Controllers
         // POST: LocacoesController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Delete(int id, IFormCollection collection)
+        public IActionResult Delete(int id, IFormCollection collection)
         {
             try
             {
@@ -168,7 +168,7 @@ namespace CarLocadora.Front.Controllers
 
         private async Task<List<SelectListItem>> CarregarVeiculos()
         {
-            List<SelectListItem> lista = new List<SelectListItem>();
+            List<SelectListItem> lista = new();
 
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", await _apiToken.Obter());
             HttpResponseMessage response = await _httpClient.GetAsync($"{_dadosBase.Value.API_URL_BASE}Veiculo");
@@ -197,7 +197,7 @@ namespace CarLocadora.Front.Controllers
 
         private async Task<List<SelectListItem>> CarregarClientes()
         {
-            List<SelectListItem> lista = new List<SelectListItem>();
+            List<SelectListItem> lista = new();
 
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", await _apiToken.Obter());
             HttpResponseMessage response = await _httpClient.GetAsync($"{_dadosBase.Value.API_URL_BASE}Cliente");
@@ -226,7 +226,7 @@ namespace CarLocadora.Front.Controllers
 
         private async Task<List<SelectListItem>> CarregarFormasDePagamento()
         {
-            List<SelectListItem> lista = new List<SelectListItem>();
+            List<SelectListItem> lista = new();
 
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", await _apiToken.Obter());
             HttpResponseMessage response = await _httpClient.GetAsync($"{_dadosBase.Value.API_URL_BASE}FormasDePagamento");

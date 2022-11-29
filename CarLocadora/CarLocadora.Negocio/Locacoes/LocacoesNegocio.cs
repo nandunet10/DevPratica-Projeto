@@ -52,22 +52,6 @@ namespace CarLocadora.Negocio.Locacoes
             locacoes.Cliente = _context.Clientes.SingleOrDefault(x => x.CPF == locacoes.ClienteCPF);
             locacoes.Veiculo = _context.Veiculos.SingleOrDefault(x => x.Placa == locacoes.VeiculoPlaca);
 
-            //var seguro = new SeguroProtocoloModel()
-            //{
-            //    Id = model.Id,
-            //    CPF = cliente.CPF,
-            //    CNH = cliente.CNH,
-            //    Nome = cliente.Nome,
-            //    DataNascimento = cliente.DataNascimento,
-            //    Telefone = cliente.Telefone,
-            //    Placa = veiculo.Placa,
-            //    Marca = veiculo.Marca,
-            //    Modelo = veiculo.Modelo,
-            //    Combustivel = veiculo.Combustivel,
-            //    DataHoraRetiradaPrevista = model.DataHoraRetiradaPrevista,
-            //    DataHoraDevolucaoPrevista = model.DataHoraDevolucaoPrevista
-            //};
-
             _rabbitMQNegocio.PublicarMensagem(locacoes, "", "seguro");
         }
 

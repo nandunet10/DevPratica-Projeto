@@ -63,20 +63,20 @@ namespace CarLocadora.ObterDadosSeguradora
                             }
                             else
                             {
-                                _logger.LogInformation($"Status {statusSeguradora.Status}, não é possível seguir com a requisição ");
+                                _logger.LogWarning($"Status {statusSeguradora.Status}, não é possível seguir com a requisição ");
                                 canal.BasicNack(retorno.DeliveryTag, false, true);
                             }
 
                         }
                         else
                         {
-                            _logger.LogInformation($"Não existe mensagem na fila.");
+                            _logger.LogWarning($"Não existe mensagem na fila.");
                             canal.BasicNack(retorno.DeliveryTag, false, true);
                         }
                     }
                     catch
                     {
-                        _logger.LogInformation("Não foi possível realizar a operação");
+                        _logger.LogError("Não foi possível realizar a operação");
                         canal.BasicNack(retorno.DeliveryTag, false, true);
                     }
                 }

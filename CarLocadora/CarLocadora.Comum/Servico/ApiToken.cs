@@ -10,32 +10,34 @@ namespace CarLocadora.Comum.Servico
     {
         private readonly IOptions<DadosBase> _dadosBase;
         private readonly IOptions<LoginResposta> _loginRespostaModel;
+        private readonly HttpClient _httpClient;
 
-        public ApiToken(IOptions<DadosBase> dadosBase, IOptions<LoginResposta> loginRespostaModel)
+
+        public ApiToken(IOptions<DadosBase> dadosBase, IOptions<LoginResposta> loginRespostaModel, IHttpClientFactory httpClient)
         {
             _dadosBase = dadosBase;
             _loginRespostaModel = loginRespostaModel;
+            _httpClient = httpClient.CreateClient();
+            _httpClient.DefaultRequestHeaders.Accept.Clear();
+            _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
         private async Task ObterToken()
         {
-            HttpClient cliente = new();
-            cliente.DefaultRequestHeaders.Accept.Clear();
-            cliente.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            LoginRequisicao loginRequisicaoModel = new()
+            {
+                Usuario = _dadosBase.Value.USUARIO,
+                Senha = _dadosBase.Value.SENHA
 
-            //LoginRequisicaoModel loginRequisicaoModel = new()
-            //{
-            //    Usuario = "UsuarioDevPratica",
-            //    Senha = "SenhaDevPratica"
-            //};
+            };
 
-            HttpResponseMessage response = await cliente.PostAsJsonAsync($"{_dadosBase.Value.API_URL_BASE}Login", new LoginRequisicao() { Usuario = _dadosBase.Value.USUARIO, Senha = _dadosBase.Value.SENHA });
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync($"{_dadosBase.Value.API_URL_BASE}Login", loginRequisicaoModel);
 
             if (response.IsSuccessStatusCode)
             {
                 LoginResposta loginRespostaModel = JsonConvert.DeserializeObject<LoginResposta>(await response.Content.ReadAsStringAsync());
 
-                if (loginRespostaModel.Autenticado == true)
+                if (loginRespostaModel.Autenticado)
                 {
                     _loginRespostaModel.Value.Autenticado = loginRespostaModel.Autenticado;
                     _loginRespostaModel.Value.Usuario = loginRespostaModel.Usuario;

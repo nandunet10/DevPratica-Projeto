@@ -82,7 +82,7 @@ namespace CarLocadora.EnviarEmail
                 {
                     var dados = JsonConvert.DeserializeObject<ClienteModelRetorno>(Encoding.UTF8.GetString(retorno.Body.ToArray()));
 
-                    await EnviarEmail(dados.Email, dados.Nome);
+                    EnviarEmail(dados.Email, dados.Nome);
 
                     canal.BasicAck(retorno.DeliveryTag, true);
                 }
@@ -92,7 +92,7 @@ namespace CarLocadora.EnviarEmail
             }
         }
         #region Disparo de e-mail
-        private async Task EnviarEmail(string email, string nome)
+        private static void EnviarEmail(string email, string nome)
         {
             MailMessage mensagem = new()
             {
@@ -113,7 +113,7 @@ namespace CarLocadora.EnviarEmail
             smtpCliente.Send(mensagem);
         }
 
-        private string EmailBoasVindas(string nome)
+        private static string EmailBoasVindas(string nome)
         {
             StringBuilder sb = new StringBuilder();
             sb.Append($"<p>Parabéns <b>{nome},</b></p>");

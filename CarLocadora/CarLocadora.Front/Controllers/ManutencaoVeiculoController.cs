@@ -43,7 +43,7 @@ namespace CarLocadora.Front.Controllers
         }
 
         // GET: ManutencaoVeiculoController/Details/5
-        public async Task<IActionResult> Details(int id)
+        public IActionResult Details(int id)
         {
             return View();
         }
@@ -156,7 +156,7 @@ namespace CarLocadora.Front.Controllers
         // POST: ManutencaoVeiculoController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Delete(int id, IFormCollection collection)
+        public IActionResult Delete(int id, IFormCollection collection)
         {
             try
             {
@@ -170,7 +170,7 @@ namespace CarLocadora.Front.Controllers
 
         private async Task<List<SelectListItem>> CarregarVeiculos()
         {
-            List<SelectListItem> lista = new List<SelectListItem>();
+            List<SelectListItem> lista = new();
 
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", await _apiToken.Obter());
             HttpResponseMessage response = await _httpClient.GetAsync($"{_dadosBase.Value.API_URL_BASE}Veiculo");

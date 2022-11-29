@@ -90,8 +90,8 @@ public static class ServicoExtensoes
             new RateLimitRule
             {
                 Endpoint = "post:/api/Login",
-                Limit = 2,
-                Period = "10s",
+                Limit = 10,
+                Period = "10m",
             },
             //new RateLimitRule
             //{

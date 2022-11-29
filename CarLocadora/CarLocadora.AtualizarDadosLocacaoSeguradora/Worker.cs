@@ -53,14 +53,14 @@ namespace CarLocadora.AtualizarDadosLocacaoSeguradora
                         }
                         else
                         {
-                            _logger.LogInformation($"Não existe mensagem na fila.");
+                            _logger.LogWarning($"Não existe mensagem na fila.");
                             canal.BasicNack(retorno.DeliveryTag, false, true);
 
                         }
                     }
                     catch
                     {
-                        _logger.LogInformation("Não foi possível realizar a operação");
+                        _logger.LogError("Não foi possível realizar a operação");
                         canal.BasicNack(retorno.DeliveryTag, false, true);
                     }
                 }

@@ -45,13 +45,13 @@ namespace CarLocadora.Front.Controllers
         }
 
         // GET: UsuarioController/Details/5
-        public async Task<IActionResult> Details(int id)
+        public IActionResult Details(int id)
         {
             return View();
         }
 
         // GET: UsuarioController/Create
-        public async Task<IActionResult> Create()
+        public IActionResult Create()
         {
             return View();
         }
@@ -129,7 +129,7 @@ namespace CarLocadora.Front.Controllers
         }
 
         // GET: UsuarioController/Delete/5
-        public async Task<IActionResult> Delete(int id)
+        public IActionResult Delete(int id)
         {
             return View();
         }
@@ -137,7 +137,7 @@ namespace CarLocadora.Front.Controllers
         // POST: UsuarioController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Delete(int id, IFormCollection collection)
+        public IActionResult Delete(int id, IFormCollection collection)
         {
             try
             {

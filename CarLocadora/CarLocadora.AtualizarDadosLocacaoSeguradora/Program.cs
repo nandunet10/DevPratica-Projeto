@@ -2,7 +2,6 @@ using CarLocadora.AtualizarDadosLocacaoSeguradora;
 using CarLocadora.Comum.Modelos;
 using CarLocadora.Comum.Servico;
 using CarLocadora.Infra.RabbitMQ;
-using CarLocadora.Modelo.Modelos;
 
 IHost host = Host.CreateDefaultBuilder(args)
     .UseWindowsService()

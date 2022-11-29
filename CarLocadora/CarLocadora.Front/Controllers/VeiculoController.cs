@@ -160,7 +160,7 @@ namespace CarLocadora.Front.Controllers
 
         private async Task<List<SelectListItem>> CarregarCategoriasDeVeiculos()
         {
-            List<SelectListItem> lista = new List<SelectListItem>();
+            List<SelectListItem> lista = new();
 
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", await _apiToken.Obter());
             HttpResponseMessage response = await _httpClient.GetAsync($"{_dadosBase.Value.API_URL_BASE}Categoria");
